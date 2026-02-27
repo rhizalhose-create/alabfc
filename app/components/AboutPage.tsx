@@ -73,14 +73,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(99,102,241,0.05),transparent_70%)]" />
 
       {/* Sticky header - more minimal */}
-      <header className="sticky top-0 z-10 flex items-center justify-between px-6 md:px-12 py-5 glass-card border-b border-white/[0.03]">
-        <div className="flex items-center gap-4">
+      <header className="sticky top-0 z-10 flex items-center justify-between px-3 sm:px-6 md:px-12 py-3 sm:py-5 glass-card border-b border-white/[0.03]">
+        <div className="flex items-center gap-2 sm:gap-4">
           {/* LOGO - clickable with modern styling */}
           <button
             onClick={() =>
               setSelectedImage({ src: "/alab.png", alt: "Alab FC Logo" })
             }
-            className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-indigo-600/20 border border-white/15 overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 hover:scale-105 hover:border-white/30"
+            className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-indigo-600/20 border border-white/15 overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 hover:scale-105 hover:border-white/30"
           >
             <Image
               src="/alab.png"
@@ -90,10 +90,10 @@ export function AboutPage({ onBack }: AboutPageProps) {
             />
           </button>
           <div>
-            <p className="text-white/40 text-xs tracking-wider font-light">
+            <p className="text-white/40 text-[10px] sm:text-xs md:text-xs tracking-wider font-light">
               EST. 2015 · LOS BAÑOS, LAGUNA
             </p>
-            <p className="text-white font-bold text-xl tracking-wide">ALAB FC</p>
+            <p className="text-white font-bold text-base sm:text-lg md:text-xl tracking-wide">ALAB FC</p>
           </div>
         </div>
         <button
@@ -117,31 +117,31 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </button>
       </header>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
         {/* HERO SECTION - enhanced dramatic layout */}
-        <section className="grid lg:grid-cols-2 gap-16 items-center mb-32">
+        <section className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 md:mb-32">
           <div className="animate-up delay-1">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-sm font-medium tracking-wide mb-8 backdrop-blur-sm hover:border-sky-400/50 transition-all">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs sm:text-sm font-medium tracking-wide mb-6 sm:mb-8 backdrop-blur-sm hover:border-sky-400/50 transition-all">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span> ABOUT US
             </div>
-            <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] mb-8 tracking-tight">
-              ALAB<span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 text-5xl md:text-6xl mt-2 font-black">FOOTBALL CLUB</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.9] mb-6 sm:mb-8 tracking-tight">
+              ALAB<span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 font-black">FOOTBALL CLUB</span>
             </h1>
-            <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mb-8 font-light">
+            <p className="text-white/60 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-6 sm:mb-8 font-light">
               <span className="text-white font-semibold">ALAB FOOTBALL CLUB</span>
               {" or "}
               <span className="text-sky-300 font-medium">"ALAB FC"</span>
               {" is a dynamic football community based in "}
               <span className="text-sky-400 font-semibold">Los Baños, Laguna</span>, dedicated to developing excellence in youth sports and character.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-sky-400"></div>
-                <span className="text-white/70 text-sm">Est. 2015</span>
+                <div className="w-2.5 h-2.5 rounded-full bg-sky-400"></div>
+                <span className="text-white/70 text-xs sm:text-sm">Est. 2015</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
-                <span className="text-white/70 text-sm">AFC Licensed</span>
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                <span className="text-white/70 text-xs sm:text-sm">AFC Licensed</span>
               </div>
             </div>
           </div>
@@ -151,9 +151,9 @@ export function AboutPage({ onBack }: AboutPageProps) {
             onClick={() =>
               setSelectedImage({ src: "/alab3.jpg", alt: "ALAB FC Team" })
             }
-            className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 animate-up delay-2 hover-lift animate-float"
+            className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 animate-up delay-2 hover-lift animate-float"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent pointer-events-none z-10 rounded-3xl group-hover:from-sky-500/40 transition-all duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent pointer-events-none z-10 rounded-2xl sm:rounded-3xl group-hover:from-sky-500/40 transition-all duration-300"></div>
             <Image
               src="/alab3.jpg"
               alt="ALAB FC Team"
@@ -163,16 +163,16 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <div className="text-center">
-                <svg className="w-16 h-16 text-white/90 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-12 sm:w-16 h-12 sm:h-16 text-white/90 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                 </svg>
-                <span className="text-white text-sm font-semibold">Click to enlarge</span>
+                <span className="text-white text-xs sm:text-sm font-semibold">Click to enlarge</span>
               </div>
             </div>
-            <div className="absolute bottom-6 left-6 flex items-center gap-3">
-              <div className="p-2.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 group-hover:bg-sky-500/50 transition-all">
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 flex items-center gap-3">
+              <div className="p-2 sm:p-2.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 group-hover:bg-sky-500/50 transition-all">
                 <svg
-                  className="w-5 h-5 text-white"
+                  className="w-4 sm:w-5 h-4 sm:h-5 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -190,27 +190,27 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </section>
 
         {/* BRIEF HISTORY - enhanced layout */}
-        <section className="mb-32">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-medium tracking-wide mb-12 animate-up delay-2">
+        <section className="mb-16 md:mb-32">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs sm:text-sm font-medium tracking-wide mb-8 sm:mb-12 animate-up delay-2">
             <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span> OUR JOURNEY
           </div>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className="order-2 lg:order-1 animate-up delay-3">
-              <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 sm:mb-8 leading-tight tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-400">Brief</span>
                 <br />
                 History
               </h2>
-              <div className="space-y-5 text-white/70 text-lg leading-relaxed">
-                <p className="bg-gradient-to-r from-orange-500/10 to-amber-500/10 p-6 rounded-2xl border border-orange-500/30 backdrop-blur-sm hover-lift hover:border-orange-400/50 transition-all duration-300">
-                  <span className="text-blue-300 font-bold block text-sm mb-2 uppercase tracking-widest">October 30, 2015</span>
+              <div className="space-y-3 sm:space-y-5 text-white/70 text-sm sm:text-base md:text-lg leading-relaxed">
+                <p className="bg-gradient-to-r from-orange-500/10 to-amber-500/10 p-4 sm:p-6 rounded-2xl border border-orange-500/30 backdrop-blur-sm hover-lift hover:border-orange-400/50 transition-all duration-300">
+                  <span className="text-blue-300 font-bold block text-xs sm:text-sm mb-2 uppercase tracking-widest">October 30, 2015</span>
                   <span className="text-white font-light">Alab FC was formed by a group of passionate parents united by one vision: to develop competent football players and coaches who embody excellence and integrity.</span>
                 </p>
-                <p className="bg-gradient-to-r from-sky-500/10 to-blue-500/10 p-6 rounded-2xl border border-sky-500/30 backdrop-blur-sm hover-lift hover:border-sky-400/50 transition-all duration-300">
-                  <span className="text-orange-400 font-semibold text-xl block mb-2">"Alab"</span>
+                <p className="bg-gradient-to-r from-sky-500/10 to-blue-500/10 p-4 sm:p-6 rounded-2xl border border-sky-500/30 backdrop-blur-sm hover-lift hover:border-sky-400/50 transition-all duration-300">
+                  <span className="text-orange-400 font-semibold text-lg sm:text-xl block mb-2">"Alab"</span>
                   <span className="text-white font-light">means <span className="text-orange-300 font-semibold">burning passion</span> — the eternal fire that drives every member of our club to excellence and achievement.</span>
                 </p>
-                <p className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-2xl border border-emerald-500/30 backdrop-blur-sm hover-lift hover:border-emerald-400/50 transition-all duration-300">
+                <p className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-4 sm:p-6 rounded-2xl border border-emerald-500/30 backdrop-blur-sm hover-lift hover:border-emerald-400/50 transition-all duration-300">
                   <span className="text-white font-light">From a handful of dedicated players, ages 13-14, we've grown into a thriving family of football enthusiasts committed to building champions of character.</span>
                 </p>
               </div>
@@ -221,7 +221,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
               onClick={() =>
                 setSelectedImage({ src: "/Referees Football Cup 2016.jpg", alt: "Alab FC History" })
               }
-              className="relative aspect-square rounded-3xl overflow-hidden border border-orange-500/40 shadow-2xl cursor-pointer group order-1 lg:order-2 animate-up delay-2 hover-lift"
+              className="relative aspect-square rounded-2xl sm:rounded-3xl overflow-hidden border border-orange-500/40 shadow-2xl cursor-pointer group order-1 lg:order-2 animate-up delay-2 hover-lift"
             >
               <Image
                 src="/Referees Football Cup 2016.jpg"
@@ -232,27 +232,27 @@ export function AboutPage({ onBack }: AboutPageProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:via-black/50 transition-all duration-300" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center">
-                  <svg className="w-16 h-16 text-white/90 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-12 sm:w-16 h-12 sm:h-16 text-white/90 mx-auto mb-2 sm:mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                   </svg>
-                  <span className="text-white text-sm font-semibold tracking-wide">CLICK TO ENLARGE</span>
+                  <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">CLICK TO ENLARGE</span>
                 </div>
               </div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-white/90 text-xs bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 font-medium tracking-wide">Referees Cup 2016</span>
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white/90 text-xs bg-black/60 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20 font-medium tracking-wide">Referees Cup 2016</span>
               </div>
             </button>
           </div>
         </section>
 
         {/* VISION & MISSION - modern cards */}
-        <section className="grid md:grid-cols-2 gap-6 mb-32">
+        <section className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-16 md:mb-32">
           {/* Vision Card */}
-          <div className="group bg-gradient-to-br from-emerald-500/5 via-emerald-500/5 to-transparent border border-emerald-500/20 rounded-3xl p-8 backdrop-blur-sm hover:border-emerald-400/40 transition-all duration-500 hover-lift">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <div className="group bg-gradient-to-br from-emerald-500/5 via-emerald-500/5 to-transparent border border-emerald-500/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-sm hover:border-emerald-400/40 transition-all duration-500 hover-lift">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <div className="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-xl sm:rounded-2xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-8 h-8 text-emerald-400"
+                  className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-emerald-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -271,9 +271,9 @@ export function AboutPage({ onBack }: AboutPageProps) {
                   />
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold text-white">VISION</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">VISION</h3>
             </div>
-            <p className="text-white/60 text-lg leading-relaxed">
+            <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed">
               To be at the forefront of developing competent players, coaches
               and members of the organization, who exhibit the right values, to
               contribute to the enhancement of the Philippine football
@@ -282,11 +282,11 @@ export function AboutPage({ onBack }: AboutPageProps) {
           </div>
 
           {/* Mission Card */}
-          <div className="group bg-gradient-to-br from-amber-500/5 via-amber-500/5 to-transparent border border-amber-500/20 rounded-3xl p-8 backdrop-blur-sm hover:border-amber-400/40 transition-all duration-500 hover-lift">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <div className="group bg-gradient-to-br from-amber-500/5 via-amber-500/5 to-transparent border border-amber-500/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-sm hover:border-amber-400/40 transition-all duration-500 hover-lift">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <div className="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-xl sm:rounded-2xl bg-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-8 h-8 text-amber-400"
+                  className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-amber-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -299,25 +299,25 @@ export function AboutPage({ onBack }: AboutPageProps) {
                   />
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold text-white">MISSION</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">MISSION</h3>
             </div>
-            <ul className="space-y-4 text-white/60 text-lg">
-              <li className="flex gap-4">
-                <span className="text-amber-400 font-bold text-xl mt-1">•</span>
+            <ul className="space-y-2 sm:space-y-4 text-white/60 text-xs sm:text-sm md:text-lg">
+              <li className="flex gap-3 sm:gap-4">
+                <span className="text-amber-400 font-bold text-lg sm:text-xl mt-0.5 flex-shrink-0">•</span>
                 <span>
                   Develop members who are well-disciplined, committed and
                   exhibit the right values;
                 </span>
               </li>
-              <li className="flex gap-4">
-                <span className="text-amber-400 font-bold text-xl mt-1">•</span>
+              <li className="flex gap-3 sm:gap-4">
+                <span className="text-amber-400 font-bold text-lg sm:text-xl mt-0.5 flex-shrink-0">•</span>
                 <span>
                   Immerse players and coaches in developmental programs geared
                   towards excellence in football;
                 </span>
               </li>
-              <li className="flex gap-4">
-                <span className="text-amber-400 font-bold text-xl mt-1">•</span>
+              <li className="flex gap-3 sm:gap-4">
+                <span className="text-amber-400 font-bold text-lg sm:text-xl mt-0.5 flex-shrink-0">•</span>
                 <span>
                   Create memorable experiences and have fun in every game,
                   where life-long lessons are learned.
@@ -328,11 +328,11 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </section>
 
         {/* REGISTRATION - minimal cards */}
-        <section className="mb-32">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+        <section className="mb-16 md:mb-32">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 text-center">
             <span className="text-indigo-400">OFFICIAL</span> REGISTRATION
           </h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-3 sm:gap-4">
             {[
               { icon: "📋", title: "SEC Registered", value: "CN201608872" },
               {
@@ -348,38 +348,38 @@ export function AboutPage({ onBack }: AboutPageProps) {
             ].map((item) => (
               <div
                 key={item.title}
-                className="glass-card rounded-2xl p-8 text-center hover:border-white/20 transition-all duration-300 hover-lift"
+                className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center hover:border-white/20 transition-all duration-300 hover-lift"
               >
-                <span className="text-4xl mb-4 block">{item.icon}</span>
-                <p className="text-white/40 text-sm font-medium tracking-wide mb-2">
+                <span className="text-3xl sm:text-4xl mb-2 sm:mb-4 block">{item.icon}</span>
+                <p className="text-white/40 text-xs sm:text-sm font-medium tracking-wide mb-1 sm:mb-2">
                   {item.title}
                 </p>
-                <p className="text-white font-semibold text-lg">{item.value}</p>
+                <p className="text-white font-semibold text-sm sm:text-base md:text-lg">{item.value}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ACHIEVEMENTS - modern grid */}
-        <section className="mb-32">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-sm font-medium tracking-wide mb-12 animate-up delay-3">
+        <section className="mb-16 md:mb-32">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs sm:text-sm font-medium tracking-wide mb-8 sm:mb-12 animate-up delay-3">
             <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span> ACCOMPLISHMENTS
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4 animate-up delay-3 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 animate-up delay-3 tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">ACHIEVEMENTS</span> & AWARDS
           </h2>
-          <p className="text-white/60 text-lg mb-12 max-w-3xl animate-up delay-3">A showcase of championships, international participations, and community initiatives that define our excellence.</p>
+          <p className="text-white/60 text-sm sm:text-base md:text-lg mb-8 sm:mb-12 max-w-3xl animate-up delay-3">A showcase of championships, international participations, and community initiatives that define our excellence.</p>
 
-          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+          <div className="grid lg:grid-cols-2 gap-3 sm:gap-6 mb-3 sm:mb-6">
             {/* Championships */}
-            <div className="glass-card rounded-2xl p-8 hover:border-yellow-400/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-4xl">🏆</span>
-                <h3 className="text-2xl font-bold text-yellow-400">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-yellow-400/30 transition-all duration-300">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <span className="text-2xl sm:text-4xl">🏆</span>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-400">
                   CHAMPIONSHIPS
                 </h3>
               </div>
-              <div className="max-h-64 overflow-y-auto pr-3 space-y-2 text-white/60 text-sm custom-scrollbar">
+              <div className="max-h-64 overflow-y-auto pr-3 space-y-2 text-white/60 text-xs sm:text-sm custom-scrollbar">
                 <p>
                   • Milo Football Tournament (May 5, 2019), Under 10
                 </p>

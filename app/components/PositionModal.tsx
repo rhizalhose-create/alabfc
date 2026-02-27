@@ -52,51 +52,53 @@ export function PositionModal({ number, onClose }: PositionModalProps) {
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby={`position-${number}-title`}
-      className={`fixed m-auto max-w-2xl w-[90%] bg-gradient-to-br from-[#1a2332] to-[#0f1420] border-4 ${borderColor} rounded-3xl p-10 shadow-[0_0_70px_rgba(0,150,255,0.7)] backdrop:bg-black/70 backdrop:backdrop-blur-sm`}
+      className={`fixed m-auto max-w-2xl w-[92%] sm:w-[90%] bg-gradient-to-br from-[#1a2332] to-[#0f1420] border-4 ${borderColor} rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_0_70px_rgba(0,150,255,0.7)] backdrop:bg-black/70 backdrop:backdrop-blur-sm max-h-[90vh] overflow-hidden`}
     >
-      <div className="relative">
+      <div className="relative max-h-[80vh] overflow-y-auto pr-1 sm:pr-2">
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 right-0 text-white/60 hover:text-white text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
+          className="absolute top-0 right-0 text-white/60 hover:text-white text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
           aria-label="Close modal"
         >
           ✕
         </button>
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
           <div
-            className={`w-16 h-16 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center text-white font-bold text-3xl shadow-lg`}
+            className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center text-white font-bold text-2xl sm:text-3xl shadow-lg`}
           >
             {number}
           </div>
           <h2
             id={`position-${number}-title`}
-            className="text-4xl md:text-5xl font-bold text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight"
           >
             {details.title}
           </h2>
         </div>
-        <div className="space-y-6 text-white/80 text-lg">
-          <p className="text-xl leading-relaxed">{details.description}</p>
-          <div className="border-l-4 border-sky-500 pl-6 py-3">
-            <p className="font-semibold text-white text-xl mb-3">
+        <div className="space-y-4 sm:space-y-6 text-white/80 text-base sm:text-lg">
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+            {details.description}
+          </p>
+          <div className="border-l-4 border-sky-500 pl-4 sm:pl-6 py-3 sm:py-4">
+            <p className="font-semibold text-white text-lg sm:text-xl mb-2 sm:mb-3">
               Key Responsibilities:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-white/80 text-lg">
+            <ul className="list-disc list-inside space-y-1.5 sm:space-y-2 text-white/80 text-sm sm:text-base md:text-lg">
               {details.responsibilities.map((r) => (
                 <li key={r}>{r}</li>
               ))}
             </ul>
           </div>
           <div className="bg-white/5 rounded-xl p-4">
-            <p className="font-semibold text-white text-xl mb-3">
+            <p className="font-semibold text-white text-lg sm:text-xl mb-2 sm:mb-3">
               Legendary Players:
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {details.famousPlayers.map((p) => (
                 <span
                   key={p}
-                  className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm"
+                  className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-xs sm:text-sm"
                 >
                   {p}
                 </span>
@@ -107,7 +109,7 @@ export function PositionModal({ number, onClose }: PositionModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="mt-8 w-full py-4 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xl rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="mt-6 sm:mt-8 w-full py-3 sm:py-4 bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg sm:text-xl rounded-lg sm:rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
         >
           GOT IT
         </button>

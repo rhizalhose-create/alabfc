@@ -100,24 +100,24 @@ export function ContactModal({ onClose }: ContactModalProps) {
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby="contact-modal-title"
-      className="fixed m-auto w-[90%] max-w-md bg-gradient-to-br from-[#1a2332] to-[#0f1420] border-4 border-white/10 rounded-3xl p-8 shadow-[0_0_70px_rgba(0,150,255,0.4)] backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+      className="fixed m-auto w-[92%] sm:w-[90%] max-w-md bg-gradient-to-br from-[#1a2332] to-[#0f1420] border-4 border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 shadow-[0_0_70px_rgba(0,150,255,0.4)] backdrop:bg-black/70 backdrop:backdrop-blur-sm max-h-[90vh] overflow-hidden"
     >
-      <div className="relative">
+      <div className="relative max-h-[80vh] overflow-y-auto pr-1">
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 right-0 text-white/60 hover:text-white text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
+          className="absolute top-0 right-0 text-white/60 hover:text-white text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
           aria-label="Close contact modal"
         >
           ✕
         </button>
         <h2
           id="contact-modal-title"
-          className="text-3xl font-bold text-white mb-1 tracking-wide"
+          className="text-2xl sm:text-3xl font-bold text-white mb-1 tracking-wide"
         >
           Contact Us
         </h2>
-        <p className="text-white/40 text-sm mb-6 tracking-wider">
+        <p className="text-white/40 text-xs sm:text-sm mb-5 sm:mb-6 tracking-wider">
           Get in touch with Alab FC
         </p>
         <div className="flex flex-col gap-3">
@@ -127,10 +127,10 @@ export function ContactModal({ onClose }: ContactModalProps) {
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-4 px-4 py-3 rounded-2xl border ${c.border} bg-white/5 hover:bg-white/10 transition-all duration-200 group`}
+              className={`flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-3 rounded-2xl border ${c.border} bg-white/5 hover:bg-white/10 transition-all duration-200 group`}
             >
               <div
-                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+                className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
               >
                 {c.icon}
               </div>
