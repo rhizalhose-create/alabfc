@@ -34,11 +34,11 @@ export default function Home() {
       {/* DESKTOP VERSION - Hidden on mobile */}
       <main className="hidden md:flex relative h-screen w-screen items-center justify-center overflow-hidden bg-[#0a0f1a]">
         {/* Background */}
-        <Image src="/alab1.jpg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.6] saturate-[1.2] scale-105" priority />
+        <Image src="/alab1.svg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.6] saturate-[1.2] scale-105" priority />
 
         {/* Top-left logo */}
         <div className="absolute top-8 left-8 z-50">
-          <Image src="/alab.png" alt="Alab Football Club Logo" width={150} height={150} className="object-contain drop-shadow-2xl" priority />
+          <Image src="/alab.svg" alt="Alab Football Club Logo" width={150} height={150} className="object-contain drop-shadow-2xl" priority />
         </div>
 
         {/* Overlays */}
@@ -147,7 +147,7 @@ export default function Home() {
       {/* MOBILE VERSION - Hidden on desktop */}
       <main className="md:hidden relative min-h-screen w-full flex flex-col bg-[#0a0f1a] overflow-y-auto">
         {/* Background */}
-        <Image src="/alab1.jpg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.6] saturate-[1.2] scale-105 -z-10" priority />
+        <Image src="/alab1.svg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.6] saturate-[1.2] scale-105 -z-10" priority />
 
         {/* Overlays */}
         <div className="fixed inset-0 bg-gradient-to-br from-[#03050a]/80 via-[#111827]/70 to-[#1e2a3a]/60 -z-10" />
@@ -156,7 +156,7 @@ export default function Home() {
         {/* Top Navigation */}
         <nav className="flex items-center justify-between gap-2 p-3 z-40 bg-black/30 backdrop-blur-md border-b border-white/10">
           <div className="w-12 h-12">
-            <Image src="/alab.png" alt="Alab Football Club Logo" width={48} height={48} className="object-contain drop-shadow-lg" priority />
+            <Image src="/alab.svg" alt="Alab Football Club Logo" width={48} height={48} className="object-contain drop-shadow-lg" priority />
           </div>
           <div className="flex items-center gap-2">
             <button

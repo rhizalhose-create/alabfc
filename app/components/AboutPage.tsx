@@ -78,12 +78,12 @@ export function AboutPage({ onBack }: AboutPageProps) {
           {/* LOGO - clickable with modern styling */}
           <button
             onClick={() =>
-              setSelectedImage({ src: "/alab.png", alt: "Alab FC Logo" })
+              setSelectedImage({ src: "/alab.svg", alt: "Alab FC Logo" })
             }
             className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-indigo-600/20 border border-white/15 overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 hover:scale-105 hover:border-white/30"
           >
             <Image
-              src="/alab.png"
+              src="/alab.svg"
               alt="Alab FC Logo"
               fill
               className="object-contain p-2 transition-transform duration-300 group-hover:scale-110"
@@ -149,13 +149,13 @@ export function AboutPage({ onBack }: AboutPageProps) {
           {/* HERO IMAGE - enhanced with glow effect */}
           <button
             onClick={() =>
-              setSelectedImage({ src: "/alab3.jpg", alt: "ALAB FC Team" })
+              setSelectedImage({ src: "/alab3.svg", alt: "ALAB FC Team" })
             }
             className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 animate-up delay-2 hover-lift animate-float"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent pointer-events-none z-10 rounded-2xl sm:rounded-3xl group-hover:from-sky-500/40 transition-all duration-300"></div>
             <Image
-              src="/alab3.jpg"
+              src="/alab3.svg"
               alt="ALAB FC Team"
               fill
               className="object-cover transition-all duration-700 group-hover:scale-110"
@@ -219,12 +219,12 @@ export function AboutPage({ onBack }: AboutPageProps) {
             {/* HISTORY IMAGE */}
             <button
               onClick={() =>
-                setSelectedImage({ src: "/Referees Football Cup 2016.jpg", alt: "Alab FC History" })
+                setSelectedImage({ src: "/Referees%20Football%20Cup%202016.svg", alt: "Alab FC History" })
               }
               className="relative aspect-square rounded-2xl sm:rounded-3xl overflow-hidden border border-orange-500/40 shadow-2xl cursor-pointer group order-1 lg:order-2 animate-up delay-2 hover-lift"
             >
               <Image
-                src="/Referees Football Cup 2016.jpg"
+                src="/Referees%20Football%20Cup%202016.svg"
                 alt="Alab FC History"
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-110"
@@ -448,14 +448,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
               <button
                 onClick={() =>
                   setSelectedImage({
-                    src: "/alab1.jpg",
+                    src: "/alab1.svg",
                     alt: "International Tournament",
                   })
                 }
                 className="relative w-full h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300"
               >
                 <Image
-                  src="/alab1.jpg"
+                  src="/alab1.svg"
                   alt="International Tournament"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -530,14 +530,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
               <button
                 onClick={() =>
                   setSelectedImage({
-                    src: "/alab3.jpg",
+                    src: "/alab3.svg",
                     alt: "Community Service",
                   })
                 }
                 className="relative w-full h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-rose-500/50 transition-all duration-300"
               >
                 <Image
-                  src="/alab3.jpg"
+                  src="/alab3.svg"
                   alt="Community Service"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -588,14 +588,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <button
               onClick={() =>
                 setSelectedImage({
-                  src: "/alab_clinics.jpg",
+                  src: "/alab_clinics.svg",
                   alt: "Football Clinic",
                 })
               }
               className="relative w-full h-24 rounded-xl overflow-hidden border border-green-500/20 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all duration-300"
             >
               <Image
-                src="/alab_clinics.jpg"
+                src="/alab_clinics.svg"
                 alt="Football Clinic"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -636,14 +636,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <button
               onClick={() =>
                 setSelectedImage({
-                  src: "/Alab_Copa.jpg",
+                  src: "/Alab_Copa.svg",
                   alt: "Copa San Lazaro",
                 })
               }
               className="relative w-full h-24 rounded-xl overflow-hidden border border-purple-500/20 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300"
             >
               <Image
-                src="/Alab_Copa.jpg"
+                src="/Alab_Copa.svg"
                 alt="Copa San Lazaro"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -846,14 +846,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <button
               onClick={() =>
                 setSelectedImage({
-                  src: "/alab_coaches.jpg",
+                  src: "/alab_coaches.svg",
                   alt: "Coaching Staff",
                 })
               }
               className="relative w-full h-96 rounded-2xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 transition-all duration-300 hover:scale-[1.02]"
             >
               <Image
-                src="/alab_coaches.jpg"
+                src="/alab_coaches.svg"
                 alt="Coaching Staff"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
