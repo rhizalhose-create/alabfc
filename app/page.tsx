@@ -81,8 +81,8 @@ export default function Home() {
         </div>
 
         {/* Football Field */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-[70%] md:w-[65%] h-[50%]">
+        <div className="absolute inset-0 flex items-center justify-center pt-8">
+          <div className="relative w-[70%] md:w-[65%] h-[45%]">
             <div className="relative w-full h-full bg-black/20 backdrop-blur-[2px] border-2 border-white/40 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,150,255,0.2)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
 
         {/* Squad Numbers */}
-        <div className="absolute bottom-[2%] left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] max-w-3xl">
+        <div className="absolute bottom-[1%] left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] max-w-3xl z-20">
           <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-[0_0_30px_rgba(0,150,255,0.2)]">
             <h3 className="text-white/90 font-bold text-lg mb-3 text-center tracking-wider">SQUAD NUMBERS</h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
