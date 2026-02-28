@@ -17,6 +17,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ALAB Football Club | Los Baños, Laguna",
   description: "Alab FC — Est. 2015. Developing excellence in youth football and character. Los Baños, Laguna.",
+  icons: {
+    icon: [
+      {
+        url: "/alab.png",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
@@ -34,6 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" type="image/png" href="/alab.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen bg-[#050810]`}
       >
