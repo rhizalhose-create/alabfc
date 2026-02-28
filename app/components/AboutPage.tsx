@@ -73,14 +73,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(99,102,241,0.04),transparent_70%)]" />
 
       {/* Sticky header */}
-      <header className="sticky top-0 z-10 flex items-center justify-between px-3 sm:px-6 md:px-12 py-3 sm:py-5 glass-card border-b border-white/[0.06]">
+      <header className="sticky top-0 z-10 flex items-center justify-between px-2 sm:px-3 md:px-8 py-2 sm:py-3 glass-card border-b border-white/[0.06]">
         <div className="flex items-center gap-2 sm:gap-4">
           {/* LOGO - clickable with modern styling */}
           <button
             onClick={() =>
               setSelectedImage({ src: "/alab.png", alt: "Alab FC Logo" })
             }
-            className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-indigo-600/20 border border-white/15 overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 hover:scale-105 hover:border-white/30"
+            className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 rounded-xl bg-gradient-to-br from-sky-500/20 to-indigo-600/20 border border-white/15 overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 hover:scale-105 hover:border-white/30"
           >
             <Image
               src="/alab.png"
@@ -90,18 +90,18 @@ export function AboutPage({ onBack }: AboutPageProps) {
             />
           </button>
           <div>
-            <p className="text-white/40 text-[10px] sm:text-xs md:text-xs tracking-wider font-light">
+            <p className="text-white/40 text-[8px] sm:text-[9px] md:text-xs tracking-wider font-light">
               EST. 2015 · LOS BAÑOS, LAGUNA
             </p>
-            <p className="text-white font-bold text-base sm:text-lg md:text-xl tracking-wide">ALAB FC</p>
+            <p className="text-white font-bold text-sm sm:text-base md:text-lg tracking-wide">ALAB FC</p>
           </div>
         </div>
         <button
           onClick={onBack}
-          className="min-h-[44px] min-w-[44px] sm:min-w-0 px-4 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 text-white/90 hover:text-white transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 group"
+          className="min-h-[36px] min-w-[36px] sm:min-w-0 px-2.5 py-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 text-white/90 hover:text-white transition-all duration-300 text-xs font-medium flex items-center justify-center gap-1.5 group"
         >
           <svg
-            className="w-4 h-4 transition-transform group-hover:-translate-x-1"
+            className="w-3 h-3 transition-transform group-hover:-translate-x-1"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -117,14 +117,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </button>
       </header>
 
-      <div className="relative z-10 w-full max-w-full lg:max-w-7xl mx-auto px-3 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
+      <div className="relative z-10 w-full max-w-full lg:max-w-7xl mx-auto px-1.5 sm:px-3 md:px-8 py-6 sm:py-9 md:py-12">
         {/* HERO SECTION - enhanced dramatic layout */}
-        <section className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 md:mb-32">
+        <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 md:mb-24">
           <div className="animate-up delay-1">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs sm:text-sm font-medium tracking-wide mb-6 sm:mb-8 backdrop-blur-sm hover:border-sky-400/50 transition-all">
-              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span> ABOUT US
+            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] sm:text-xs font-medium tracking-wide mb-4 sm:mb-6 backdrop-blur-sm hover:border-sky-400/50 transition-all">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> ABOUT US
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.9] mb-6 sm:mb-8 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[0.9] mb-4 sm:mb-6 tracking-tight">
               ALAB<span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 font-black">FOOTBALL CLUB</span>
             </h1>
             <p className="text-white/60 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-6 sm:mb-8 font-light">
@@ -134,14 +134,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
               {" is a dynamic football community based in "}
               <span className="text-sky-400 font-semibold">Los Baños, Laguna</span>, dedicated to developing excellence in youth sports and character.
             </p>
-            <div className="flex flex-wrap gap-3 sm:gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-sky-400"></div>
-                <span className="text-white/70 text-xs sm:text-sm">Est. 2015</span>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-sky-400"></div>
+                <span className="text-white/70 text-[9px] sm:text-xs">Est. 2015</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                <span className="text-white/70 text-xs sm:text-sm">AFC Licensed</span>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                <span className="text-white/70 text-[9px] sm:text-xs">AFC Licensed</span>
               </div>
             </div>
           </div>

@@ -100,52 +100,52 @@ export function ContactModal({ onClose }: ContactModalProps) {
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby="contact-modal-title"
-      className="fixed m-auto w-[96%] xs:w-[92%] sm:w-[90%] max-w-md bg-[#0f172a]/95 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 xs:p-5 sm:p-7 md:p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5)] max-h-[90vh] overflow-hidden"
+      className="fixed m-auto w-[96%] xs:w-[92%] sm:w-[90%] max-w-md bg-[#0f172a]/95 backdrop-blur-2xl border border-white/10 rounded-xl sm:rounded-2xl p-3 xs:p-4 sm:p-5 md:p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5)] max-h-[90vh] overflow-hidden"
     >
       <div className="relative max-h-[80vh] overflow-y-auto pr-1">
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 right-0 min-h-[40px] xs:min-h-[44px] min-w-[40px] xs:min-w-[44px] flex items-center justify-center text-white/60 hover:text-white text-xl xs:text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1.5 xs:p-2"
+          className="absolute top-0 right-0 min-h-[36px] xs:min-h-[40px] min-w-[36px] xs:min-w-[40px] flex items-center justify-center text-white/60 hover:text-white text-lg xs:text-xl sm:text-2xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1 xs:p-1.5"
           aria-label="Close contact modal"
         >
           ✕
         </button>
         <h2
           id="contact-modal-title"
-          className="text-xl xs:text-2xl sm:text-3xl font-bold text-white mb-1 tracking-wide"
+          className="text-lg xs:text-xl sm:text-2xl font-bold text-white mb-1 tracking-wide"
         >
           Contact Us
         </h2>
-        <p className="text-white/40 text-[10px] xs:text-xs sm:text-sm mb-4 xs:mb-5 sm:mb-6 tracking-wider">
+        <p className="text-white/40 text-[9px] xs:text-[10px] sm:text-xs mb-3 xs:mb-4 sm:mb-5 tracking-wider">
           Get in touch with Alab FC
         </p>
-        <div className="flex flex-col gap-2.5 xs:gap-3">
+        <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
           {contacts.map((c) => (
             <a
               key={c.label}
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2.5 xs:gap-3 sm:gap-4 min-h-[48px] xs:min-h-[52px] px-2.5 xs:px-3 sm:px-4 py-2.5 xs:py-3 rounded-lg xs:rounded-xl border ${c.border} bg-white/[0.04] hover:bg-white/[0.08] transition-all duration-300 group`}
+              className={`flex items-center gap-2 xs:gap-2.5 sm:gap-3 min-h-[40px] xs:min-h-[44px] px-2 xs:px-2.5 sm:px-3 py-2 xs:py-2.5 rounded-lg xs:rounded-lg border ${c.border} bg-white/[0.04] hover:bg-white/[0.08] transition-all duration-300 group`}
             >
               <div
-                className={`w-9 xs:w-10 sm:w-12 h-9 xs:h-10 sm:h-12 rounded-lg xs:rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+                className={`w-8 xs:w-9 sm:w-10 h-8 xs:h-9 sm:h-10 rounded-lg xs:rounded-lg bg-gradient-to-br ${c.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
               >
                 {c.icon}
               </div>
               <div className="flex flex-col min-w-0">
                 <span
-                  className={`text-[9px] xs:text-[10px] sm:text-xs font-semibold tracking-widest uppercase ${c.textColor}`}
+                  className={`text-[8px] xs:text-[9px] sm:text-xs font-semibold tracking-widest uppercase ${c.textColor}`}
                 >
                   {c.label}
                 </span>
-                <span className="text-white/80 group-hover:text-white text-xs xs:text-sm font-medium transition-colors truncate">
+                <span className="text-white/80 group-hover:text-white text-[9px] xs:text-xs sm:text-sm font-medium transition-colors truncate">
                   {c.value}
                 </span>
               </div>
               <svg
-                className="w-3.5 xs:w-4 h-3.5 xs:h-4 text-white/20 group-hover:text-white/60 ml-auto transition-colors flex-shrink-0"
+                className="w-3 xs:w-3.5 h-3 xs:h-3.5 text-white/20 group-hover:text-white/60 ml-auto transition-colors flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
