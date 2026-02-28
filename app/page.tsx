@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { squadNumbers } from "@/app/constants/squad";
-import { SquadNumberBubble } from "@/app/components/SquadNumberBubble";
 import { FieldZone } from "@/app/components/FieldZone";
+import { Formation442 } from "@/app/components/Formation442";
 import { ThirdModal } from "@/app/components/ThirdModal";
 import { PositionModal } from "@/app/components/PositionModal";
 import { ContactModal } from "@/app/components/ContactModal";
@@ -134,40 +133,36 @@ export default function Home() {
         </div>
 
         {/* Football Field - responsive container */}
-        <div className="flex-1 flex items-center justify-center w-full max-w-full px-1.5 xs:px-2 xs:py-3 sm:px-2 sm:py-5 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none mt-6 md:mt-0">
-          <div className="relative w-[90%] xs:w-[85%] sm:w-[80%] md:w-[70%] lg:w-[75%] xl:w-[40%] aspect-[1.5]">
+        <div className="flex-1 flex items-center justify-center w-full max-w-full px-1 xs:px-2 sm:px-3 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none mt-2 md:mt-0">
+          <div className="relative w-full md:w-[80%] lg:w-[42%] xl:w-[38%] aspect-[1/1]">
             <div className="relative w-full h-full glass rounded-lg xs:rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_80px_-20px_rgba(56,189,248,0.15)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="attacking" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
-              <div className="absolute left-1/2 top-1/2 w-12 h-12 sm:w-26 sm:h-16 md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px] border-2 border-white/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute left-1/2 top-1/2 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 bg-white/80 rounded-full -translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] sm:w-[4px] md:w-[6px] h-8 sm:h-10 md:h-[50px] bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] z-10" />
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[3px] sm:w-[4px] md:w-[6px] h-8 sm:h-10 md:h-[50px] bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] z-10" />
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[20%] h-[60%] border-2 border-white/40" />
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[20%] h-[60%] border-2 border-white/40" />
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[8%] h-[30%] border-2 border-white/40" />
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[8%] h-[30%] border-2 border-white/40" />
-              <div className="absolute left-[12%] top-1/2 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2 md:h-2 bg-white/80 rounded-full -translate-y-1/2" />
-              <div className="absolute right-[12%] top-1/2 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2 md:h-2 bg-white/80 rounded-full -translate-y-1/2" />
-              <div className="absolute left-0 top-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-l-2 border-t-2 border-white/50 rounded-tl-xl sm:rounded-tl-2xl" />
-              <div className="absolute right-0 top-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-r-2 border-t-2 border-white/50 rounded-tr-xl sm:rounded-tr-2xl" />
-              <div className="absolute left-0 bottom-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-l-2 border-b-2 border-white/50 rounded-bl-xl sm:rounded-bl-2xl" />
+              
+              {/* 4-4-2 Formation Overlay */}
+              <Formation442 hoveredNumber={hoveredNumber} onHover={setHoveredNumber} onClick={openPositionModal} />
+              
+              <div className="absolute left-1/2 top-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 border-2 border-white/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
+              <div className="absolute left-1/2 top-1/2 w-0.5 h-0.5 sm:w-1 sm:h-1 md:w-1.5 md:h-1.5 bg-white/80 rounded-full -translate-x-1/2 -translate-y-1/2" />
+              {/* Goal bars - top and bottom */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 sm:w-6 md:w-8 lg:w-10 h-0.5 sm:h-0.5 md:h-0.5 bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] z-10" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 sm:w-6 md:w-8 lg:w-10 h-0.5 sm:h-0.5 md:h-0.5 bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] z-10" />
+              {/* Penalty areas - top and bottom */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[52%] h-[16%] border-2 border-white/40" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[52%] h-[16%] border-2 border-white/40" />
+              {/* Goal areas - top and bottom */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[25%] h-[7%] border-2 border-white/40" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[25%] h-[7%] border-2 border-white/40" />
+              {/* Penalty spots - top and bottom */}
+              <div className="absolute top-[12%] left-1/2 w-0.5 h-0.5 sm:w-0.5 sm:h-0.5 md:w-1 md:h-1 bg-white/80 rounded-full -translate-x-1/2" />
+              <div className="absolute bottom-[12%] left-1/2 w-0.5 h-0.5 sm:w-0.5 sm:h-0.5 md:w-1 md:h-1 bg-white/80 rounded-full -translate-x-1/2" />
+              <div className="absolute left-0 top-0 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 border-l-2 border-t-2 border-white/50 rounded-tl-lg" />
+              <div className="absolute right-0 top-0 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 border-r-2 border-t-2 border-white/50 rounded-tr-lg" />
+              <div className="absolute left-0 bottom-0 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 border-l-2 border-b-2 border-white/50 rounded-bl-lg" />
             </div>
           </div>
         </div>
-
-        {/* Squad Numbers - responsive grid and padding */}
-        <section className="w-full max-w-full px-1.5 xs:px-2.5 xs:py-3 sm:px-3 sm:py-4 md:absolute md:bottom-[2%] md:left-1/2 md:-translate-x-1/2 md:w-[88%] lg:w-[82%] xl:w-[78%] md:max-w-[min(100%,900px)] md:px-0 md:py-0">
-          <div className="glass rounded-lg xs:rounded-xl sm:rounded-2xl p-1.5 xs:p-2 sm:p-2.5 md:p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_16px_32px_-8px_rgba(0,0,0,0.35)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] max-w-md sm:max-w-lg md:max-w-full mx-auto">
-            <h3 className="text-white/95 font-semibold text-[0.48rem] xs:text-[0.52rem] sm:text-[0.55rem] mb-1 xs:mb-1.5 sm:mb-2 text-center tracking-[0.1em] xs:tracking-[0.15em] sm:tracking-[0.2em] uppercase">Squad Numbers</h3>
-            <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-0.5 xs:gap-0.5 sm:gap-1">
-              {squadNumbers.map(({ number, label, ariaLabel }) => (
-                <SquadNumberBubble key={number} number={number} label={label} ariaLabel={ariaLabel} hoveredNumber={hoveredNumber} onHover={setHoveredNumber} onClick={openPositionModal} />
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Ambient glow (desktop only) */}
         <div className="hidden md:block absolute bottom-[18%] right-[10%] w-80 h-80 bg-sky-500/5 rounded-full blur-[110px] pointer-events-none -z-10" />
