@@ -135,7 +135,7 @@ export default function Home() {
 
         {/* Football Field - responsive container */}
         <div className="flex-1 flex items-center justify-center w-full max-w-full px-1.5 xs:px-2 xs:py-3 sm:px-2 sm:py-5 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none mt-6 md:mt-0">
-          <div className="relative w-[85%] xs:w-[10%] sm:w-[10%] md:w-[10%] lg:w-[10%] xl:w-[40%] aspect-[2]">
+          <div className="relative w-[85%] xs:w-[10%] sm:w-[10%] md:w-[10%] lg:w-[10%] xl:w-[60%] aspect-[2]">
             <div className="relative w-full h-full glass rounded-lg xs:rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_80px_-20px_rgba(56,189,248,0.15)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
@@ -159,9 +159,9 @@ export default function Home() {
 
         {/* Squad Numbers - responsive grid and padding */}
         <section className="w-full max-w-full px-1.5 xs:px-2.5 xs:py-3 sm:px-3 sm:py-4 md:absolute md:bottom-[2%] md:left-1/2 md:-translate-x-1/2 md:w-[88%] lg:w-[82%] xl:w-[78%] md:max-w-[min(100%,900px)] md:px-0 md:py-0">
-          <div className="glass rounded-lg xs:rounded-xl sm:rounded-2xl p-2 xs:p-2.5 sm:p-3 md:p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_16px_32px_-8px_rgba(0,0,0,0.35)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] max-w-md sm:max-w-lg md:max-w-full mx-auto">
-            <h3 className="text-white/95 font-semibold text-[0.55rem] xs:text-[0.6rem] sm:text-[0.65rem] mb-1.5 xs:mb-2 sm:mb-3 text-center tracking-[0.1em] xs:tracking-[0.15em] sm:tracking-[0.2em] uppercase">Squad Numbers</h3>
-            <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-0.5 xs:gap-1 sm:gap-1.5">
+          <div className="glass rounded-lg xs:rounded-xl sm:rounded-2xl p-1.5 xs:p-2 sm:p-2.5 md:p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_16px_32px_-8px_rgba(0,0,0,0.35)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] max-w-md sm:max-w-lg md:max-w-full mx-auto">
+            <h3 className="text-white/95 font-semibold text-[0.48rem] xs:text-[0.52rem] sm:text-[0.55rem] mb-1 xs:mb-1.5 sm:mb-2 text-center tracking-[0.1em] xs:tracking-[0.15em] sm:tracking-[0.2em] uppercase">Squad Numbers</h3>
+            <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-0.5 xs:gap-0.5 sm:gap-1">
               {squadNumbers.map(({ number, label, ariaLabel }) => (
                 <SquadNumberBubble key={number} number={number} label={label} ariaLabel={ariaLabel} hoveredNumber={hoveredNumber} onHover={setHoveredNumber} onClick={openPositionModal} />
               ))}

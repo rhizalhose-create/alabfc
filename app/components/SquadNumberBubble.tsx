@@ -56,7 +56,7 @@ export function SquadNumberBubble({
   return (
     <button
       type="button"
-      className="group relative flex flex-col items-center justify-center min-h-[36px] min-w-[36px] xs:min-h-[40px] xs:min-w-[40px] sm:min-h-0 sm:min-w-0 p-1 xs:p-1.5 sm:p-2 rounded-lg xs:rounded-lg sm:rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-white/[0.1] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500/40 focus:ring-offset-2 focus:ring-offset-[#0f172a]"
+      className="group relative flex flex-col items-center justify-center min-h-[28px] min-w-[28px] xs:min-h-[32px] xs:min-w-[32px] sm:min-h-0 sm:min-w-0 p-0.5 xs:p-0.5 sm:p-1 rounded-lg xs:rounded-lg sm:rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-white/[0.1] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500/40 focus:ring-offset-2 focus:ring-offset-[#0f172a]"
       onMouseEnter={() => onHover(number)}
       onMouseLeave={() => onHover(null)}
       onFocus={() => onHover(number)}
@@ -75,11 +75,11 @@ export function SquadNumberBubble({
         </div>
       )}
       <div
-        className={`w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 rounded-md xs:rounded-lg sm:rounded-lg bg-gradient-to-br ${getGradient()} flex items-center justify-center text-white font-bold text-[10px] xs:text-xs sm:text-sm shadow-[0_4px_14px_rgba(0,0,0,0.25)] ring-1 ring-black/20 transition-transform duration-300 group-hover:scale-105`}
+        className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-7 sm:h-7 rounded-sm xs:rounded-md sm:rounded-lg bg-gradient-to-br ${getGradient()} flex items-center justify-center text-white font-bold text-[8px] xs:text-[9px] sm:text-xs shadow-[0_4px_14px_rgba(0,0,0,0.25)] ring-1 ring-black/20 transition-transform duration-300 group-hover:scale-105`}
       >
         {number}
       </div>
-      <span className="text-white/90 text-[8px] xs:text-[9px] sm:text-[10px] mt-0.5 xs:mt-0.5 sm:mt-1 font-medium tracking-wide truncate max-w-full">{label}</span>
+      <span className="text-white/90 text-[6px] xs:text-[7px] sm:text-[8px] mt-0.5 font-medium tracking-wide truncate max-w-full">{label}</span>
     </button>
   );
 }
