@@ -34,7 +34,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
   themeColor: "#050810",
 };
-
+/// This is the root layout that wraps all pages. It sets up the HTML structure, includes global styles, and defines metadata for the site.
 export default function RootLayout({
   children,
 }: Readonly<{
