@@ -58,47 +58,47 @@ export function PositionModal({ number, onClose }: PositionModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 right-0 min-h-[36px] min-w-[36px] flex items-center justify-center text-white/60 hover:text-white text-xl sm:text-2xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1.5"
+          className="absolute top-0 right-0 min-h-[32px] min-w-[32px] flex items-center justify-center text-white/60 hover:text-white text-lg sm:text-xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
           aria-label="Close modal"
         >
           ✕
         </button>
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
           <div
-            className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center text-white font-bold text-xl sm:text-2xl shadow-lg`}
+            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg`}
           >
             {number}
           </div>
           <h2
             id={`position-${number}-title`}
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight"
+            className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight"
           >
             {details.title}
           </h2>
         </div>
-        <div className="space-y-3 sm:space-y-4 text-white/80 text-sm sm:text-base">
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+        <div className="space-y-3 sm:space-y-4 text-white/80 text-xs sm:text-sm">
+          <p className="text-xs sm:text-sm md:text-base leading-relaxed">
             {details.description}
           </p>
           <div className="border-l-4 border-sky-500 pl-3 sm:pl-4 py-2 sm:py-3">
-            <p className="font-semibold text-white text-base sm:text-lg mb-1.5 sm:mb-2">
+            <p className="font-semibold text-white text-sm sm:text-base mb-1.5 sm:mb-2">
               Key Responsibilities:
             </p>
-            <ul className="list-disc list-inside space-y-1 sm:space-y-1.5 text-white/80 text-xs sm:text-sm md:text-base">
+            <ul className="list-disc list-inside space-y-1 sm:space-y-1.5 text-white/80 text-[11px] sm:text-xs md:text-sm">
               {details.responsibilities.map((r) => (
                 <li key={r}>{r}</li>
               ))}
             </ul>
           </div>
           <div className="bg-white/5 rounded-lg p-3">
-            <p className="font-semibold text-white text-base sm:text-lg mb-1.5 sm:mb-2">
+            <p className="font-semibold text-white text-sm sm:text-base mb-1.5 sm:mb-2">
               Legendary Players:
             </p>
             <div className="flex flex-wrap gap-1 sm:gap-1.5">
               {details.famousPlayers.map((p) => (
                 <span
                   key={p}
-                  className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-xs sm:text-sm"
+                  className="px-2.5 py-0.5 bg-white/10 rounded-full text-white/80 text-[10px] sm:text-xs"
                 >
                   {p}
                 </span>
@@ -109,7 +109,7 @@ export function PositionModal({ number, onClose }: PositionModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="mt-4 sm:mt-6 w-full min-h-[40px] py-2 sm:py-3 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#0f172a]"
+          className="mt-4 sm:mt-6 w-full min-h-[36px] py-2 sm:py-2.5 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm rounded-lg transition-all duration-300 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#0f172a]"
         >
           Got it
         </button>
