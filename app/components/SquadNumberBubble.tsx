@@ -56,7 +56,7 @@ export function SquadNumberBubble({
   return (
     <button
       type="button"
-      className="relative flex flex-col items-center p-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500/50"
+      className="group relative flex flex-col items-center justify-center min-h-[40px] min-w-[40px] xs:min-h-[44px] xs:min-w-[44px] sm:min-h-0 sm:min-w-0 p-1.5 xs:p-2 sm:p-2.5 rounded-lg xs:rounded-xl sm:rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-white/[0.1] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500/40 focus:ring-offset-2 focus:ring-offset-[#0f172a]"
       onMouseEnter={() => onHover(number)}
       onMouseLeave={() => onHover(null)}
       onFocus={() => onHover(number)}
@@ -68,19 +68,18 @@ export function SquadNumberBubble({
       {isHovered && (
         <div
           id={`tooltip-${number}`}
-          className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-50 w-40 bg-gray-900 text-white text-xs rounded-lg py-2 px-3 shadow-lg border ${getBorder()} text-center`}
+          className={`absolute z-50 w-[max(160px,min(100vw-2rem,220px))] max-w-[calc(100vw-1rem)] bg-[#0f172a]/95 backdrop-blur-xl text-white text-[10px] sm:text-xs rounded-lg sm:rounded-xl py-2 sm:py-2.5 px-3 sm:px-3.5 shadow-xl border ${getBorder()} text-center font-normal leading-relaxed bottom-full mb-2 left-1/2 -translate-x-1/2 sm:bottom-full sm:mb-2 before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-[5px] sm:before:border-[6px] before:border-transparent before:border-t-[#0f172a]/95`}
           role="tooltip"
         >
           {positionMeanings[number]}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
         </div>
       )}
       <div
-        className={`w-10 h-10 rounded-full bg-gradient-to-br ${getGradient()} flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+        className={`w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 rounded-md xs:rounded-lg sm:rounded-xl bg-gradient-to-br ${getGradient()} flex items-center justify-center text-white font-bold text-xs xs:text-sm sm:text-base shadow-[0_4px_14px_rgba(0,0,0,0.25)] ring-1 ring-black/20 transition-transform duration-300 group-hover:scale-105`}
       >
         {number}
       </div>
-      <span className="text-white/90 text-xs mt-1 font-medium">{label}</span>
+      <span className="text-white/90 text-[9px] xs:text-[10px] sm:text-[11px] mt-0.5 xs:mt-1 sm:mt-1.5 font-medium tracking-wide truncate max-w-full">{label}</span>
     </button>
   );
 }

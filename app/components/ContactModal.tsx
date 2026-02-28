@@ -100,52 +100,52 @@ export function ContactModal({ onClose }: ContactModalProps) {
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby="contact-modal-title"
-      className="fixed m-auto w-[92%] sm:w-[90%] max-w-md bg-gradient-to-br from-[#1a2332] to-[#0f1420] border-4 border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 shadow-[0_0_70px_rgba(0,150,255,0.4)] backdrop:bg-black/70 backdrop:backdrop-blur-sm max-h-[90vh] overflow-hidden"
+      className="fixed m-auto w-[96%] xs:w-[92%] sm:w-[90%] max-w-md bg-[#0f172a]/95 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 xs:p-5 sm:p-7 md:p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5)] max-h-[90vh] overflow-hidden"
     >
       <div className="relative max-h-[80vh] overflow-y-auto pr-1">
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 right-0 text-white/60 hover:text-white text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
+          className="absolute top-0 right-0 min-h-[40px] xs:min-h-[44px] min-w-[40px] xs:min-w-[44px] flex items-center justify-center text-white/60 hover:text-white text-xl xs:text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1.5 xs:p-2"
           aria-label="Close contact modal"
         >
           ✕
         </button>
         <h2
           id="contact-modal-title"
-          className="text-2xl sm:text-3xl font-bold text-white mb-1 tracking-wide"
+          className="text-xl xs:text-2xl sm:text-3xl font-bold text-white mb-1 tracking-wide"
         >
           Contact Us
         </h2>
-        <p className="text-white/40 text-xs sm:text-sm mb-5 sm:mb-6 tracking-wider">
+        <p className="text-white/40 text-[10px] xs:text-xs sm:text-sm mb-4 xs:mb-5 sm:mb-6 tracking-wider">
           Get in touch with Alab FC
         </p>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2.5 xs:gap-3">
           {contacts.map((c) => (
             <a
               key={c.label}
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-3 rounded-2xl border ${c.border} bg-white/5 hover:bg-white/10 transition-all duration-200 group`}
+              className={`flex items-center gap-2.5 xs:gap-3 sm:gap-4 min-h-[48px] xs:min-h-[52px] px-2.5 xs:px-3 sm:px-4 py-2.5 xs:py-3 rounded-lg xs:rounded-xl border ${c.border} bg-white/[0.04] hover:bg-white/[0.08] transition-all duration-300 group`}
             >
               <div
-                className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+                className={`w-9 xs:w-10 sm:w-12 h-9 xs:h-10 sm:h-12 rounded-lg xs:rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
               >
                 {c.icon}
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <span
-                  className={`text-xs font-semibold tracking-widest uppercase ${c.textColor}`}
+                  className={`text-[9px] xs:text-[10px] sm:text-xs font-semibold tracking-widest uppercase ${c.textColor}`}
                 >
                   {c.label}
                 </span>
-                <span className="text-white/80 group-hover:text-white text-sm font-medium transition-colors">
+                <span className="text-white/80 group-hover:text-white text-xs xs:text-sm font-medium transition-colors truncate">
                   {c.value}
                 </span>
               </div>
               <svg
-                className="w-4 h-4 text-white/20 group-hover:text-white/60 ml-auto transition-colors"
+                className="w-3.5 xs:w-4 h-3.5 xs:h-4 text-white/20 group-hover:text-white/60 ml-auto transition-colors flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

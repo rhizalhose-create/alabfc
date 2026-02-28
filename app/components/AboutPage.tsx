@@ -16,7 +16,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
   } | null>(null);
 
   return (
-    <div className="fixed inset-0 z-[100] bg-[#070c17] overflow-y-auto">
+    <div className="fixed inset-0 z-[100] bg-[#050810] overflow-y-auto">
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(30px); }
@@ -46,9 +46,9 @@ export function AboutPage({ onBack }: AboutPageProps) {
         .delay-5 { animation-delay: 0.5s; opacity: 0; }
         .delay-6 { animation-delay: 0.6s; opacity: 0; }
         .glass-card {
-          background: rgba(18, 25, 40, 0.6);
+          background: rgba(15, 23, 42, 0.7);
           backdrop-filter: blur(12px);
-          border: 1px solid rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.06);
         }
         .hover-lift {
           transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -67,23 +67,23 @@ export function AboutPage({ onBack }: AboutPageProps) {
         />
       )}
 
-      {/* Modern gradient background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-[#0a0f1a] via-[#0f1a2a] to-[#1a2639]" />
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(56,189,248,0.08),transparent_70%)]" />
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(99,102,241,0.05),transparent_70%)]" />
+      {/* Background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-[#050810] via-[#0f172a] to-[#0c1222]" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(56,189,248,0.06),transparent_70%)]" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(99,102,241,0.04),transparent_70%)]" />
 
-      {/* Sticky header - more minimal */}
-      <header className="sticky top-0 z-10 flex items-center justify-between px-3 sm:px-6 md:px-12 py-3 sm:py-5 glass-card border-b border-white/[0.03]">
+      {/* Sticky header */}
+      <header className="sticky top-0 z-10 flex items-center justify-between px-3 sm:px-6 md:px-12 py-3 sm:py-5 glass-card border-b border-white/[0.06]">
         <div className="flex items-center gap-2 sm:gap-4">
           {/* LOGO - clickable with modern styling */}
           <button
             onClick={() =>
-              setSelectedImage({ src: "/alab.svg", alt: "Alab FC Logo" })
+              setSelectedImage({ src: "/alab.png", alt: "Alab FC Logo" })
             }
             className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-indigo-600/20 border border-white/15 overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 hover:scale-105 hover:border-white/30"
           >
             <Image
-              src="/alab.svg"
+              src="/alab.png"
               alt="Alab FC Logo"
               fill
               className="object-contain p-2 transition-transform duration-300 group-hover:scale-110"
@@ -98,7 +98,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </div>
         <button
           onClick={onBack}
-          className="px-5 py-2.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-white/80 hover:text-white transition-all duration-200 text-sm font-medium backdrop-blur-sm flex items-center gap-2 group"
+          className="min-h-[44px] min-w-[44px] sm:min-w-0 px-4 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 text-white/90 hover:text-white transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 group"
         >
           <svg
             className="w-4 h-4 transition-transform group-hover:-translate-x-1"
@@ -149,13 +149,13 @@ export function AboutPage({ onBack }: AboutPageProps) {
           {/* HERO IMAGE - enhanced with glow effect */}
           <button
             onClick={() =>
-              setSelectedImage({ src: "/alab3.svg", alt: "ALAB FC Team" })
+              setSelectedImage({ src: "/alab3.jpg", alt: "ALAB FC Team" })
             }
             className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 animate-up delay-2 hover-lift animate-float"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent pointer-events-none z-10 rounded-2xl sm:rounded-3xl group-hover:from-sky-500/40 transition-all duration-300"></div>
             <Image
-              src="/alab3.svg"
+              src="/alab3.jpg"
               alt="ALAB FC Team"
               fill
               className="object-cover transition-all duration-700 group-hover:scale-110"
@@ -219,12 +219,12 @@ export function AboutPage({ onBack }: AboutPageProps) {
             {/* HISTORY IMAGE */}
             <button
               onClick={() =>
-                setSelectedImage({ src: "/Referees%20Football%20Cup%202016.svg", alt: "Alab FC History" })
+                setSelectedImage({ src: "/Referees Football Cup 2016.jpg", alt: "Alab FC History" })
               }
               className="relative aspect-square rounded-2xl sm:rounded-3xl overflow-hidden border border-orange-500/40 shadow-2xl cursor-pointer group order-1 lg:order-2 animate-up delay-2 hover-lift"
             >
               <Image
-                src="/Referees%20Football%20Cup%202016.svg"
+                src="/Referees Football Cup 2016.jpg"
                 alt="Alab FC History"
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-110"
@@ -418,10 +418,10 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
 
             {/* International */}
-            <div className="glass-card rounded-2xl p-8 hover:border-sky-400/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-4xl">🌏</span>
-                <h3 className="text-2xl font-bold text-sky-400">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-sky-400/30 transition-all duration-300">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <span className="text-2xl sm:text-4xl">🌏</span>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-sky-400">
                   INTERNATIONAL
                 </h3>
               </div>
@@ -448,14 +448,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
               <button
                 onClick={() =>
                   setSelectedImage({
-                    src: "/alab1.svg",
+                    src: "/alab1.jpg",
                     alt: "International Tournament",
                   })
                 }
                 className="relative w-full h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300"
               >
                 <Image
-                  src="/alab1.svg"
+                  src="/alab1.jpg"
                   alt="International Tournament"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -482,10 +482,10 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6">
             {/* National & Laguna */}
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-indigo-400 mb-4">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
+              <h3 className="text-lg sm:text-xl font-bold text-indigo-400 mb-3 sm:mb-4">
                 NATIONAL TOURNAMENTS
               </h3>
               <div className="space-y-2 text-white/60 text-sm mb-6">
@@ -510,10 +510,10 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
 
             {/* Community Service */}
-            <div className="glass-card rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-4xl">❤️</span>
-                <h3 className="text-2xl font-bold text-rose-400">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <span className="text-2xl sm:text-4xl">❤️</span>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-rose-400">
                   COMMUNITY SERVICE
                 </h3>
               </div>
@@ -530,14 +530,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
               <button
                 onClick={() =>
                   setSelectedImage({
-                    src: "/alab3.svg",
+                    src: "/alab3.jpg",
                     alt: "Community Service",
                   })
                 }
                 className="relative w-full h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-rose-500/50 transition-all duration-300"
               >
                 <Image
-                  src="/alab3.svg"
+                  src="/alab3.jpg"
                   alt="Community Service"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -566,11 +566,11 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </section>
 
         {/* FREE CLINICS & TOURNAMENTS */}
-        <section className="grid md:grid-cols-2 gap-6 mb-32">
+        <section className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-16 sm:mb-24 md:mb-32">
           {/* Free Clinics */}
-          <div className="group bg-gradient-to-br from-green-500/5 to-emerald-500/5 border border-green-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-green-400/40 transition-all duration-500">
-            <h3 className="text-2xl font-bold text-green-400 mb-4 flex items-center gap-3">
-              <span className="text-3xl">⚕️</span> FREE FOOTBALL CLINICS
+          <div className="group bg-gradient-to-br from-green-500/5 to-emerald-500/5 border border-green-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm hover:border-green-400/40 transition-all duration-500">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-green-400 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+              <span className="text-2xl sm:text-3xl">⚕️</span> FREE FOOTBALL CLINICS
             </h3>
             <div className="space-y-2 text-white/60 text-sm mb-4">
               <p>
@@ -588,14 +588,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <button
               onClick={() =>
                 setSelectedImage({
-                  src: "/alab_clinics.svg",
+                  src: "/alab_clinics.jpg",
                   alt: "Football Clinic",
                 })
               }
               className="relative w-full h-24 rounded-xl overflow-hidden border border-green-500/20 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all duration-300"
             >
               <Image
-                src="/alab_clinics.svg"
+                src="/alab_clinics.jpg"
                 alt="Football Clinic"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -622,9 +622,9 @@ export function AboutPage({ onBack }: AboutPageProps) {
           </div>
 
           {/* Copa San Lazaro */}
-          <div className="group bg-gradient-to-br from-purple-500/5 to-indigo-500/5 border border-purple-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-purple-400/40 transition-all duration-500">
-            <h3 className="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-3">
-              <span className="text-3xl">🏅</span> COPA SAN LAZARO
+          <div className="group bg-gradient-to-br from-purple-500/5 to-indigo-500/5 border border-purple-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm hover:border-purple-400/40 transition-all duration-500">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-purple-400 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+              <span className="text-2xl sm:text-3xl">🏅</span> COPA SAN LAZARO
             </h3>
             <p className="text-white/60 text-sm mb-4">
               Organized the 1st, 2nd, 3rd, 4th, 5th and 6th{" "}
@@ -636,14 +636,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <button
               onClick={() =>
                 setSelectedImage({
-                  src: "/Alab_Copa.svg",
+                  src: "/Alab_Copa.jpg",
                   alt: "Copa San Lazaro",
                 })
               }
               className="relative w-full h-24 rounded-xl overflow-hidden border border-purple-500/20 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300"
             >
               <Image
-                src="/Alab_Copa.svg"
+                src="/Alab_Copa.jpg"
                 alt="Copa San Lazaro"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -846,14 +846,14 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <button
               onClick={() =>
                 setSelectedImage({
-                  src: "/alab_coaches.svg",
+                  src: "/alab_coaches.jpg",
                   alt: "Coaching Staff",
                 })
               }
               className="relative w-full h-96 rounded-2xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 transition-all duration-300 hover:scale-[1.02]"
             >
               <Image
-                src="/alab_coaches.svg"
+                src="/alab_coaches.jpg"
                 alt="Coaching Staff"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -907,9 +907,9 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <p className="text-white/60 text-lg max-w-3xl font-light">Have questions about our programs or want to join ALAB FC? Reach out to us through any of these channels.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {/* Email */}
-            <div className="glass-card rounded-2xl p-8 text-center hover:border-sky-500/40 transition-all duration-300 hover-lift border-l-4 border-l-sky-500 group">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-center hover:border-sky-500/40 transition-all duration-300 hover-lift border-l-4 border-l-sky-500 group">
               <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/40 group-hover:scale-110 transition-all duration-300">
                 <svg className="w-8 h-8 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -922,7 +922,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
 
             {/* Phone */}
-            <div className="glass-card rounded-2xl p-8 text-center hover:border-emerald-500/40 transition-all duration-300 hover-lift border-l-4 border-l-emerald-500 group">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-center hover:border-emerald-500/40 transition-all duration-300 hover-lift border-l-4 border-l-emerald-500 group">
               <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-emerald-500/20 flex items-center justify-center group-hover:bg-emerald-500/40 group-hover:scale-110 transition-all duration-300">
                 <svg className="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948.684l1.498 4.493a1 1 0 00.502.756l2.048 1.029a11.042 11.042 0 005.516 5.516l1.029 2.048a1 1 0 00.756.502l4.493 1.498a1 1 0 00.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -935,7 +935,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
 
             {/* Location */}
-            <div className="glass-card rounded-2xl p-8 text-center hover:border-amber-500/40 transition-all duration-300 hover-lift border-l-4 border-l-amber-500 group">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-center hover:border-amber-500/40 transition-all duration-300 hover-lift border-l-4 border-l-amber-500 group">
               <a href="https://www.google.com/maps/place/Forestry+Development+Center/@14.1521095,121.2362191,3a,75y,325.54h,66.41t/data=!3m7!1e1!3m5!1s_IhZVpIRpewP_nFEbpMQow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D23.593219063877456%26panoid%3D_IhZVpIRpewP_nFEbpMQow%26yaw%3D325.53959078001935!7i13312!8i6656!4m10!1m2!2m1!1sforestry+los+banos+court!3m6!1s0x33bd67007b74308d:0x875b6aae07826c90!8m2!3d14.1546205!4d121.2350535!15sChhmb3Jlc3RyeSBsb3MgYmFub3MgY291cnSSARFnb3Zlcm5tZW50X29mZmljZeABAA!16s%2Fg%2F11yrx68r89?entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center h-full">
                 <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/40 group-hover:scale-110 transition-all duration-300">
                   <svg className="w-8 h-8 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -951,7 +951,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
 
             {/* Facebook */}
-            <div className="glass-card rounded-2xl p-8 text-center hover:border-blue-500/40 transition-all duration-300 hover-lift border-l-4 border-l-blue-500 group">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-center hover:border-blue-500/40 transition-all duration-300 hover-lift border-l-4 border-l-blue-500 group">
               <a href="https://www.facebook.com/alabfootballclub" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center h-full">
                 <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/40 group-hover:scale-110 transition-all duration-300">
                   <svg className="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -966,7 +966,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
             </div>
 
             {/* Instagram */}
-            <div className="glass-card rounded-2xl p-8 text-center hover:border-pink-500/40 transition-all duration-300 hover-lift border-l-4 border-l-pink-500 group">
+            <div className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-center hover:border-pink-500/40 transition-all duration-300 hover-lift border-l-4 border-l-pink-500 group">
               <a href="https://www.instagram.com/alabfc/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center h-full">
                 <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-pink-500/20 flex items-center justify-center group-hover:bg-pink-500/40 group-hover:scale-110 transition-all duration-300">
                   <svg className="w-8 h-8 text-pink-400" fill="currentColor" viewBox="0 0 24 24">

@@ -52,13 +52,13 @@ export function PositionModal({ number, onClose }: PositionModalProps) {
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby={`position-${number}-title`}
-      className={`fixed m-auto max-w-2xl w-[92%] sm:w-[90%] bg-gradient-to-br from-[#1a2332] to-[#0f1420] border-4 ${borderColor} rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_0_70px_rgba(0,150,255,0.7)] backdrop:bg-black/70 backdrop:backdrop-blur-sm max-h-[90vh] overflow-hidden`}
+      className={`fixed m-auto max-w-2xl w-[92%] sm:w-[90%] bg-[#0f172a]/95 backdrop-blur-2xl border border-white/10 ${borderColor} rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5)] max-h-[90vh] overflow-hidden`}
     >
       <div className="relative max-h-[80vh] overflow-y-auto pr-1 sm:pr-2">
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 right-0 text-white/60 hover:text-white text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-1"
+          className="absolute top-0 right-0 min-h-[44px] min-w-[44px] flex items-center justify-center text-white/60 hover:text-white text-2xl sm:text-3xl focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-2"
           aria-label="Close modal"
         >
           ✕
@@ -109,9 +109,9 @@ export function PositionModal({ number, onClose }: PositionModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="mt-6 sm:mt-8 w-full py-3 sm:py-4 bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg sm:text-xl rounded-lg sm:rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="mt-6 sm:mt-8 w-full min-h-[48px] py-3 sm:py-4 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-base sm:text-lg rounded-xl transition-all duration-300 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#0f172a]"
         >
-          GOT IT
+          Got it
         </button>
       </div>
     </dialog>

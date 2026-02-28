@@ -33,11 +33,11 @@ export default function Home() {
       {showAbout && <AboutPage onBack={() => setShowAbout(false)} />}
 
       {/* Background */}
-      <Image src="/alab1.svg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.6] saturate-[1.2] scale-105" priority />
+      <Image src="/alab1.jpg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.6] saturate-[1.2] scale-105" priority />
 
       {/* Top-left logo */}
       <div className="absolute top-8 left-8 z-50">
-        <Image src="/alab.svg" alt="Alab Football Club Logo" width={150} height={150} className="object-contain drop-shadow-2xl" priority />
+        <Image src="/alab.png" alt="Alab Football Club Logo" width={150} height={150} className="object-contain drop-shadow-2xl" priority />
       </div>
 
       {/* Overlays */}

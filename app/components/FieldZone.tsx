@@ -21,7 +21,7 @@ export function FieldZone({
   return (
     <button
       type="button"
-      className={`${cfg.positionClass} ${cfg.roundedClass} focus:outline-none focus:ring-2 ${cfg.focusRingClass}`}
+      className={`${cfg.positionClass} ${cfg.roundedClass} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent ${cfg.focusRingClass} transition-colors duration-300`}
       onMouseEnter={() => onHover(third)}
       onMouseLeave={() => onHover(null)}
       onClick={() => onClick(third)}
