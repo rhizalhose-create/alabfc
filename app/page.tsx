@@ -30,14 +30,14 @@ export default function Home() {
       {showAbout && <AboutPage onBack={() => setShowAbout(false)} />}
 
       {/* Single responsive layout: scroll on small screens, fixed on md+ */}
-      <main className="relative min-h-screen w-full md:h-screen md:overflow-hidden flex flex-col md:flex-none md:items-center md:justify-center overflow-x-hidden overflow-y-auto bg-[#050810]">
+      <main className="relative min-h-screen w-full max-w-full md:h-screen md:overflow-hidden flex flex-col md:flex-none md:items-center md:justify-center overflow-x-hidden overflow-y-auto bg-[#050810]">
         {/* Background - fixed on desktop only */}
         <div className="fixed inset-0 -z-20 md:z-0">
           <Image src="/alab1.jpg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.55] saturate-[1.15] scale-105" priority />
         </div>
         <div className="fixed inset-0 -z-10 md:z-0 bg-gradient-to-br from-[#050810]/92 via-[#0f172a]/85 to-[#0c1222]/92 md:from-[#050810]/90 md:via-[#0f172a]/80 md:to-[#0c1222]/90" />
         <div className="fixed inset-0 -z-10 md:z-0 bg-gradient-to-t from-sky-950/20 via-transparent to-transparent" />
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[120%] h-[60%] bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.06),transparent_70%)] pointer-events-none -z-10 hidden md:block" />
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-screen h-[60%] bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.06),transparent_70%)] pointer-events-none -z-10 hidden md:block" />
 
         {/* Mobile top bar */}
         <header className="md:hidden sticky top-0 z-50 flex items-center justify-between gap-1.5 xs:gap-2 px-2 xs:px-3 py-2 xs:py-2.5 glass border-b border-white/5">
@@ -144,8 +144,8 @@ export default function Home() {
         </div>
 
         {/* Football Field - responsive container */}
-        <div className="flex-1 flex items-center justify-center w-full px-2 py-3 xs:px-3 xs:py-4 sm:px-4 sm:py-6 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none">
-          <div className="relative w-full max-w-[min(100%,22rem)] aspect-[4/5] xs:max-w-[26rem] sm:max-w-[30rem] sm:aspect-[5/4] md:max-w-none md:w-[72%] lg:w-[68%] xl:w-[62%] md:h-[50%] lg:h-[52%] md:aspect-auto">
+        <div className="flex-1 flex items-center justify-center w-full max-w-full px-2 xs:px-3 xs:py-4 sm:px-4 sm:py-6 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none">
+          <div className="relative w-full max-w-[min(100%,22rem)] aspect-[4/5] xs:max-w-[26rem] sm:max-w-[30rem] sm:aspect-[5/4] md:max-w-[min(100%,900px)] md:w-[72%] lg:w-[68%] xl:w-[62%] md:h-[50%] lg:h-[52%] md:aspect-auto">
             <div className="relative w-full h-full glass rounded-lg xs:rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_80px_-20px_rgba(56,189,248,0.15)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
@@ -169,8 +169,8 @@ export default function Home() {
         </div>
 
         {/* Squad Numbers - responsive grid and padding */}
-        <section className="w-full px-2 py-3 xs:px-3 xs:py-4 sm:px-4 sm:py-5 md:absolute md:bottom-[2%] md:left-1/2 md:-translate-x-1/2 md:w-[88%] lg:w-[82%] xl:w-[78%] md:max-w-3xl md:px-0 md:py-0">
-          <div className="glass rounded-lg xs:rounded-xl sm:rounded-2xl p-2.5 xs:p-3 sm:p-4 md:p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_16px_32px_-8px_rgba(0,0,0,0.35)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] max-w-md sm:max-w-lg md:max-w-none mx-auto">
+        <section className="w-full max-w-full px-2 xs:px-3 xs:py-4 sm:px-4 sm:py-5 md:absolute md:bottom-[2%] md:left-1/2 md:-translate-x-1/2 md:w-[88%] lg:w-[82%] xl:w-[78%] md:max-w-[min(100%,900px)] md:px-0 md:py-0">
+          <div className="glass rounded-lg xs:rounded-xl sm:rounded-2xl p-2.5 xs:p-3 sm:p-4 md:p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_16px_32px_-8px_rgba(0,0,0,0.35)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] max-w-md sm:max-w-lg md:max-w-full mx-auto">
             <h3 className="text-white/95 font-semibold text-[0.6rem] xs:text-[0.65rem] sm:text-[0.7rem] mb-2 xs:mb-3 sm:mb-4 text-center tracking-[0.1em] xs:tracking-[0.15em] sm:tracking-[0.2em] uppercase">Squad Numbers</h3>
             <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-1 xs:gap-1.5 sm:gap-2">
               {squadNumbers.map(({ number, label, ariaLabel }) => (
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="hidden md:block absolute top-[18%] left-[8%] w-96 h-96 bg-indigo-500/4 rounded-full blur-[120px] pointer-events-none -z-10" />
 
         {/* Contact CTA - full width on mobile, floating on desktop */}
-        <div className="w-full px-2 py-3 xs:px-3 xs:py-4 sm:px-4 md:absolute md:bottom-6 md:right-6 md:left-auto md:w-auto md:px-0 md:py-0 z-40">
+        <div className="w-full max-w-full px-2 py-3 xs:px-3 xs:py-4 sm:px-4 md:absolute md:bottom-6 md:right-6 md:left-auto md:w-auto md:px-0 md:py-0 z-40" style={{maxWidth: 'calc(100% - 1.5rem)'}}>
           <button
             type="button"
             onClick={() => setContactOpen(true)}

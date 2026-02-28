@@ -117,7 +117,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
         </button>
       </header>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
+      <div className="relative z-10 w-full max-w-full lg:max-w-7xl mx-auto px-3 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
         {/* HERO SECTION - enhanced dramatic layout */}
         <section className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 md:mb-32">
           <div className="animate-up delay-1">

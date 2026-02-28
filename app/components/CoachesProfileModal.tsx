@@ -201,7 +201,7 @@ export function CoachesProfileModal({ onClose }: CoachesProfileModalProps) {
         </button>
       </header>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-2 xs:px-4 sm:px-6 md:px-12 py-6 xs:py-8 sm:py-12 md:py-16">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-2 xs:px-4 sm:px-6 md:px-12 py-6 xs:py-8 sm:py-12 md:py-16">
         {/* Intro Section */}
         <section className="mb-12 sm:mb-16 md:mb-20">
           <div className="text-center animate-up delay-1">
