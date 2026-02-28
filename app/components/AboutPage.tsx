@@ -6,9 +6,10 @@ import { ImageModal } from "./ImageModal";
 
 interface AboutPageProps {
   readonly onBack: () => void;
+  readonly onCoachesOpen?: () => void;
 }
 
-export function AboutPage({ onBack }: AboutPageProps) {
+export function AboutPage({ onBack, onCoachesOpen }: AboutPageProps) {
   // Add state for the image modal
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -118,75 +119,85 @@ export function AboutPage({ onBack }: AboutPageProps) {
       </header>
 
       <div className="relative z-10 w-full max-w-full lg:max-w-7xl mx-auto px-1.5 sm:px-3 md:px-8 py-6 sm:py-9 md:py-12">
-        {/* HERO SECTION - enhanced dramatic layout */}
-        <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 md:mb-24">
-          <div className="animate-up delay-1">
-            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] sm:text-xs font-medium tracking-wide mb-4 sm:mb-6 backdrop-blur-sm hover:border-sky-400/50 transition-all">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> ABOUT US
+        {/* HERO IMAGE GALLERY - FIRST, PROMINENT */}
+        <section className="mb-12 md:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {/* Large main image */}
+            <button
+              onClick={() =>
+                setSelectedImage({ src: "/alab3.jpg", alt: "ALAB FC Team" })
+              }
+              className="relative aspect-[4/3] sm:aspect-square sm:row-span-2 rounded-2xl sm:rounded-3xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 hover-lift"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent pointer-events-none z-10 rounded-2xl sm:rounded-3xl group-hover:from-sky-500/40 transition-all duration-300"></div>
+              <Image
+                src="/alab3.jpg"
+                alt="ALAB FC Team"
+                fill
+                className="object-cover transition-all duration-700 group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-center">
+                  <svg className="w-12 sm:w-16 h-12 sm:h-16 text-white/90 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                  <span className="text-white text-xs sm:text-sm font-semibold">Click to enlarge</span>
+                </div>
+              </div>
+            </button>
+
+            {/* Right column with smaller images and text */}
+            <div className="flex flex-col gap-4 sm:gap-6">
+              {/* Small image 1 */}
+              <button
+                onClick={() =>
+                  setSelectedImage({ src: "/alab_Copa.jpg", alt: "Alab FC Tournament" })
+                }
+                className="relative aspect-video rounded-2xl overflow-hidden border border-orange-500/30 shadow-xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-orange-500/50 hover-lift"
+              >
+                <Image
+                  src="/alab_Copa.jpg"
+                  alt="Alab FC Tournament"
+                  fill
+                  className="object-cover transition-all duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:from-black/90" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <svg className="w-8 sm:w-10 h-8 sm:h-10 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+                <div className="absolute bottom-3 left-3 text-white/90 text-[10px] bg-black/60 backdrop-blur-sm px-2 py-1 rounded-full border border-white/20 font-medium">2016</div>
+              </button>
+
+              {/* Quick Info Cards */}
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] sm:text-xs font-medium tracking-wide backdrop-blur-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> ABOUT US
+                </div>
+                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-4">
+                  <h2 className="text-lg sm:text-xl font-bold text-white mb-1.5">ALAB FC</h2>
+                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed">Est. 2015 in Los Baños, Laguna. Dedicated to developing excellence in youth sports and character.</p>
+                </div>
+              </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[0.9] mb-4 sm:mb-6 tracking-tight">
-              ALAB<span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 font-black">FOOTBALL CLUB</span>
-            </h1>
-            <p className="text-white/60 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-6 sm:mb-8 font-light">
+          </div>
+        </section>
+
+        {/* TEXT SECTION - AFTER IMAGES */}
+        <section className="mb-12 md:mb-20 bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div className="max-w-3xl">
+            <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed mb-4 font-light">
               <span className="text-white font-semibold">ALAB FOOTBALL CLUB</span>
               {" or "}
               <span className="text-sky-300 font-medium">"ALAB FC"</span>
               {" is a dynamic football community based in "}
               <span className="text-sky-400 font-semibold">Los Baños, Laguna</span>, dedicated to developing excellence in youth sports and character.
             </p>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-sky-400"></div>
-                <span className="text-white/70 text-[9px] sm:text-xs">Est. 2015</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                <span className="text-white/70 text-[9px] sm:text-xs">AFC Licensed</span>
-              </div>
-            </div>
+            <p className="text-white/50 text-xs sm:text-sm"> <span className="text-orange-300 font-semibold">"Alab"</span> means <span className="text-orange-300 font-semibold">burning passion</span> — the eternal fire that drives every member of our club to excellence and achievement.</p>
           </div>
-
-          {/* HERO IMAGE - enhanced with glow effect */}
-          <button
-            onClick={() =>
-              setSelectedImage({ src: "/alab3.jpg", alt: "ALAB FC Team" })
-            }
-            className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 animate-up delay-2 hover-lift animate-float"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent pointer-events-none z-10 rounded-2xl sm:rounded-3xl group-hover:from-sky-500/40 transition-all duration-300"></div>
-            <Image
-              src="/alab3.jpg"
-              alt="ALAB FC Team"
-              fill
-              className="object-cover transition-all duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <div className="text-center">
-                <svg className="w-12 sm:w-16 h-12 sm:h-16 text-white/90 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                </svg>
-                <span className="text-white text-xs sm:text-sm font-semibold">Click to enlarge</span>
-              </div>
-            </div>
-            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 flex items-center gap-3">
-              <div className="p-2 sm:p-2.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 group-hover:bg-sky-500/50 transition-all">
-                <svg
-                  className="w-4 sm:w-5 h-4 sm:h-5 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                  />
-                </svg>
-              </div>
-            </div>
-          </button>
         </section>
 
         {/* BRIEF HISTORY - enhanced layout */}
@@ -219,13 +230,13 @@ export function AboutPage({ onBack }: AboutPageProps) {
             {/* HISTORY IMAGE */}
             <button
               onClick={() =>
-                setSelectedImage({ src: "/Referees Football Cup 2016.jpg", alt: "Alab FC History" })
+                setSelectedImage({ src: "/alab_Copa.jpg", alt: "Alab FC Tournament" })
               }
               className="relative aspect-square rounded-2xl sm:rounded-3xl overflow-hidden border border-orange-500/40 shadow-2xl cursor-pointer group order-1 lg:order-2 animate-up delay-2 hover-lift"
             >
               <Image
-                src="/Referees Football Cup 2016.jpg"
-                alt="Alab FC History"
+                src="/alab_Copa.jpg"
+                alt="Alab FC Tournament"
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-110"
               />
@@ -362,205 +373,122 @@ export function AboutPage({ onBack }: AboutPageProps) {
 
         {/* ACHIEVEMENTS - modern grid */}
         <section className="mb-16 md:mb-32">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs sm:text-sm font-medium tracking-wide mb-8 sm:mb-12 animate-up delay-3">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs sm:text-sm font-medium tracking-wide mb-8 sm:mb-12">
             <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span> ACCOMPLISHMENTS
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 animate-up delay-3 tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">ACHIEVEMENTS</span> & AWARDS
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-amber-300">ACHIEVEMENTS</span> & AWARDS
           </h2>
-          <p className="text-white/60 text-sm sm:text-base md:text-lg mb-8 sm:mb-12 max-w-3xl animate-up delay-3">A showcase of championships, international participations, and community initiatives that define our excellence.</p>
+          <p className="text-white/50 text-xs sm:text-sm md:text-base mb-8 sm:mb-12 max-w-3xl">Our legacy of excellence through championships, international recognition, and community impact.</p>
 
-          <div className="grid lg:grid-cols-2 gap-3 sm:gap-6 mb-3 sm:mb-6">
-            {/* Championships */}
-            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-yellow-400/30 transition-all duration-300">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <span className="text-2xl sm:text-4xl">🏆</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-400">
-                  CHAMPIONSHIPS
-                </h3>
+          <div className="grid md:grid-cols-3 gap-3 sm:gap-4">
+            {/* Championships Card */}
+            <div className="group bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/30 rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300 hover-lift">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl sm:text-2xl">🏆</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-yellow-400">CHAMPIONSHIPS</h3>
+                  <p className="text-xs text-yellow-300/60">10 Titles</p>
+                </div>
               </div>
-              <div className="max-h-64 overflow-y-auto pr-3 space-y-2 text-white/60 text-xs sm:text-sm custom-scrollbar">
-                <p>
-                  • Milo Football Tournament (May 5, 2019), Under 10
-                </p>
-                <p>
-                  • Acquire-Rectors Cup (Mar. 23, 2019), Under 10
-                </p>
-                <p>
-                  • Football Para sa Bayan (Feb. 24, 2019), Under 13
-                </p>
-                <p>
-                  • Governor's Cup (July 28, 2018), Boys Under 18
-                </p>
-                <p>
-                  • Milo Football Tournament (May 13, 2018), Players 13 and
-                  Players 11
-                </p>
-                <p>
-                  • Bayan ni Juan Football Festival (Sep. 02, 2017), Boys 17 &
-                  Under
-                </p>
-                <p>
-                  • Buhayani Football Festival (June 12, 2017), Boys 15 & Under
-                  - MVP, Best Striker, Best GK
-                </p>
-                <p>
-                  • 4th Ceres Negros –Umbro Football Cup (Mar. 26, 2017),
-                  Women's Open Plate Match
-                </p>
-                <p>
-                  • Adidas Cup (July 03, 2016), Boys Born 2002-2003 - MVP
-                </p>
-                <p>
-                  • Referees Cup (March 13, 2016), Boys Under 14
-                </p>
+              <div className="space-y-1.5 text-white/60 text-[11px] sm:text-xs max-h-32 overflow-y-auto pr-2">
+                <p>• Milo Football Tournament (2019)</p>
+                <p>• Football Para sa Bayan (2019)</p>
+                <p>• Governor's Cup (2018)</p>
+                <p>• Buhayani Festival (2017)</p>
+                <p>• Adidas Cup (2016)</p>
+                <p>+ 5 more titles</p>
               </div>
             </div>
 
-            {/* International */}
-            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-sky-400/30 transition-all duration-300">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <span className="text-2xl sm:text-4xl">🌏</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-sky-400">
-                  INTERNATIONAL
-                </h3>
-              </div>
-              <div className="space-y-3 text-white/60 text-sm mb-6">
-                <p>
-                  <span className="text-sky-400 font-medium">• Borneo Cup 2016:</span> 8
-                  players for Azkals Foundation-Laos FC
-                </p>
-                <p className="ml-4">- Under 16: 4th Place (2 players)</p>
-                <p className="ml-4">- Under 15: 3rd Place (1 player)</p>
-                <p className="ml-4">
-                  - Under 14: 3rd Place (4 players)
-                </p>
-                <p className="ml-4">- Under 13: (2 players)</p>
-                <p>
-                  <span className="text-sky-400 font-medium">
-                    • Badung, Indonesia:
-                  </span>{" "}
-                  9 players for Apuesto Bueno United
-                </p>
-              </div>
-
-              {/* Photo */}
-              <button
-                onClick={() =>
-                  setSelectedImage({
-                    src: "/alab1.jpg",
-                    alt: "International Tournament",
-                  })
-                }
-                className="relative w-full h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300"
-              >
-                <Image
-                  src="/alab1.jpg"
-                  alt="International Tournament"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white/90 text-xs bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-1">
-                    <svg
-                      className="w-3 h-3"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                      />
-                    </svg>
-                    Click to enlarge
-                  </span>
+            {/* International Card */}
+            <div className="group bg-gradient-to-br from-sky-500/10 to-blue-500/10 border border-sky-500/30 rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm hover:border-sky-400/50 transition-all duration-300 hover-lift">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-sky-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl sm:text-2xl">🌏</span>
                 </div>
-              </button>
+                <div className="flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-sky-400">INTERNATIONAL</h3>
+                  <p className="text-xs text-sky-300/60">17 Players</p>
+                </div>
+              </div>
+              <div className="space-y-1.5 text-white/60 text-[11px] sm:text-xs">
+                <p><span className="text-sky-400 font-medium">Borneo Cup 2016</span></p>
+                <p className="ml-3">→ 8 players Azkals Foundation</p>
+                <p className="ml-3">→ 4th Place (U16)</p>
+                <p><span className="text-sky-400 font-medium">Indonesia 2016</span></p>
+                <p className="ml-3">→ 9 players Apuesto Bueno</p>
+              </div>
+            </div>
+
+            {/* National & Laguna Card */}
+            <div className="group bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm hover:border-indigo-400/50 transition-all duration-300 hover-lift">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl sm:text-2xl">🇵🇭</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-indigo-400">NATIONAL</h3>
+                  <p className="text-xs text-indigo-300/60">Youth League</p>
+                </div>
+              </div>
+              <div className="space-y-1.5 text-white/60 text-[11px] sm:text-xs">
+                <p><span className="text-indigo-400 font-medium">Pinas Cup</span></p>
+                <p className="ml-3">→ 4 players 3rd Place U14</p>
+                <p><span className="text-indigo-400 font-medium">Laguna Team</span></p>
+                <p className="ml-3">→ 7 players selected (2019)</p>
+                <p className="ml-3">→ Festival of Football</p>
+              </div>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6">
-            {/* National & Laguna */}
-            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
-              <h3 className="text-lg sm:text-xl font-bold text-indigo-400 mb-3 sm:mb-4">
-                NATIONAL TOURNAMENTS
-              </h3>
-              <div className="space-y-2 text-white/60 text-sm mb-6">
-                <p>
-                  • 5 players in Youth Football League 2019 (U17, U13, U11)
-                </p>
-                <p>• Participated in Pinas Cup 2017 and 2018</p>
-                <p>• 4 players in Pinas Cup 2016 - 3rd Place U14</p>
-              </div>
-
-              <h3 className="text-xl font-bold text-emerald-400 mb-4">
-                LAGUNA TEAM
-              </h3>
-              <div className="space-y-2 text-white/60 text-sm">
-                <p>• 2 players selected to Laguna Team 2019</p>
-                <p>• 1 player selected to Laguna Team 2017</p>
-                <p>
-                  • 4 players selected to Laguna Team 2017 for Festival of
-                  Football
-                </p>
-              </div>
-            </div>
-
+          {/* Community Impact Row */}
+          <div className="grid md:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
             {/* Community Service */}
-            <div className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <span className="text-2xl sm:text-4xl">❤️</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-rose-400">
-                  COMMUNITY SERVICE
-                </h3>
+            <div className="group bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-rose-500/30 rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm hover:border-rose-400/50 transition-all duration-300 hover-lift">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-rose-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl sm:text-2xl">❤️</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-rose-400">COMMUNITY SERVICE</h3>
+                  <p className="text-xs text-rose-300/60">"Football is for All"</p>
+                </div>
               </div>
-              <p className="text-white/50 text-lg mb-3 italic font-light">
-                "Football is for All"
-              </p>
-              <p className="text-white/60 text-sm mb-4">
-                Since June 2018, supporting{" "}
-                <span className="text-white font-semibold">9 football scholars</span>{" "}
-                ages 7-15 from public schools in Laguna.
-              </p>
-
-              {/* Photo */}
+              <p className="text-white/60 text-xs sm:text-sm mb-3">Supporting <span className="text-white font-semibold">9 football scholars</span> ages 7-15 from public schools in Laguna since 2018.</p>
               <button
-                onClick={() =>
-                  setSelectedImage({
-                    src: "/alab3.jpg",
-                    alt: "Community Service",
-                  })
-                }
-                className="relative w-full h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-rose-500/50 transition-all duration-300"
+                onClick={() => setSelectedImage({ src: "/alab3.jpg", alt: "Community Service" })}
+                className="relative w-full h-24 rounded-xl overflow-hidden border border-white/10 cursor-pointer group/img focus:outline-none focus:ring-2 focus:ring-rose-500/50 transition-all duration-300"
               >
-                <Image
-                  src="/alab3.jpg"
-                  alt="Community Service"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white/90 text-xs bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-1">
-                    <svg
-                      className="w-3 h-3"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                      />
-                    </svg>
-                    Click to enlarge
-                  </span>
+                <Image src="/alab3.jpg" alt="Community Service" fill className="object-cover transition-transform duration-500 group-hover/img:scale-105" />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
+                  <svg className="w-4 h-4 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
                 </div>
               </button>
+            </div>
+
+            {/* Free Clinics & Copa */}
+            <div className="group bg-gradient-to-br from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm hover:border-emerald-400/50 transition-all duration-300 hover-lift">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl sm:text-2xl">⚕️</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-emerald-400">CLINICS & TOURNAMENTS</h3>
+                  <p className="text-xs text-emerald-300/60">Community Programs</p>
+                </div>
+              </div>
+              <div className="space-y-2 text-white/60 text-xs sm:text-sm">
+                <p><span className="text-emerald-400 font-medium">Free Clinics</span></p>
+                <p className="ml-3">→ 315+ players trained (2017-2019)</p>
+                <p><span className="text-emerald-400 font-medium">Copa San Lazaro</span></p>
+                <p className="ml-3">→ 6 annual tournaments organized</p>
+                <p className="ml-3">→ Partnership with Manila Jockey Club</p>
+              </div>
             </div>
           </div>
         </section>
@@ -814,72 +742,98 @@ export function AboutPage({ onBack }: AboutPageProps) {
           </div>
         </section>
 
-        {/* COACHING STAFF - enhanced section */}
-        <section className="mb-32">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-sm font-medium tracking-wide mb-12 animate-up delay-4">
+        {/* COACHING STAFF - modern redesign */}
+        <section className="mb-24 md:mb-32">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs sm:text-sm font-medium tracking-wide mb-8 sm:mb-12">
             <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span> EXPERT GUIDANCE
           </div>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 animate-up delay-4">
-            <div>
-              <h2 className="text-5xl md:text-6xl font-black text-white tracking-tight">Coaching Staff</h2>
-              <p className="text-white/60 text-lg mt-4 max-w-2xl font-light">
-                <span className="text-sky-300 font-medium">AFC Licensed Coaches</span>{" "}
-                dedicated to developing technical excellence, tactical awareness, and professional character in every young athlete.
-              </p>
-            </div>
-            <button
-              onClick={() => {
-                const element = document.getElementById("coaches-modal");
-                if (element) {
-                  element.style.display = "flex";
-                }
-              }}
-              className="px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 whitespace-nowrap shadow-lg shadow-sky-500/30 focus:outline-none focus:ring-2 focus:ring-sky-500/50 animate-up delay-4"
-            >
-              View All Coaches
-            </button>
+          <div className="mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight">Coaching Staff</h2>
+            <p className="text-white/50 text-xs sm:text-sm md:text-base max-w-2xl">
+              <span className="text-sky-300 font-medium">AFC Licensed Coaches</span> bringing years of professional experience and unwavering commitment to excellence.
+            </p>
           </div>
-          <div className="glass-card rounded-3xl p-10 text-center max-w-4xl mx-auto border-t-2 border-t-sky-500/50 hover-lift group">
-            <p className="text-white/70 text-lg mb-10 leading-relaxed font-light">Our coaching team brings together <span className="text-sky-300 font-semibold">years of professional experience</span> with a commitment to building not just better football players, but better people.</p>
 
-            {/* Photo */}
-            <button
-              onClick={() =>
-                setSelectedImage({
-                  src: "/alab_coaches.jpg",
-                  alt: "Coaching Staff",
-                })
-              }
-              className="relative w-full h-96 rounded-2xl overflow-hidden border border-sky-500/30 shadow-2xl cursor-pointer group focus:outline-none focus:ring-4 focus:ring-sky-500/50 transition-all duration-300 hover:scale-[1.02]"
-            >
-              <Image
-                src="/alab_coaches.jpg"
-                alt="Coaching Staff"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-10">
-                <span className="bg-black/60 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20 flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                    />
+          <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
+            {/* Main Coaches Image */}
+            <div className="group bg-gradient-to-br from-sky-500/10 to-blue-500/10 border border-sky-500/30 rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm hover:border-sky-400/50 transition-all duration-300 hover-lift">
+              <button
+                onClick={() =>
+                  setSelectedImage({
+                    src: "/alab_coaches.jpg",
+                    alt: "Coaching Staff",
+                  })
+                }
+                className="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden border border-white/10 cursor-pointer group/img focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all duration-300 mb-4"
+              >
+                <Image
+                  src="/alab_coaches.jpg"
+                  alt="Coaching Staff"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover/img:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                   </svg>
-                  <span className="text-base font-medium">
-                    Click to view full image
-                  </span>
-                </span>
+                </div>
+              </button>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-lg">👥</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-sky-400">COACHING TEAM</h3>
+                  <p className="text-xs text-sky-300/60">Professional Excellence</p>
+                </div>
               </div>
-            </button>
+              <p className="text-white/60 text-xs sm:text-sm leading-relaxed">Building champions of character through technical excellence, tactical awareness, and life-long development.</p>
+            </div>
+
+            {/* Coaching Philosophy Cards */}
+            <div className="space-y-3 sm:space-y-4">
+              {/* Technical Development */}
+              <div className="group bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-xl p-3 sm:p-4 backdrop-blur-sm hover:border-amber-400/50 transition-all duration-300 hover-lift">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0 text-base">⚽</div>
+                  <div className="flex-1">
+                    <h4 className="text-xs sm:text-sm font-bold text-amber-400">Technical Excellence</h4>
+                    <p className="text-white/50 text-[11px] sm:text-xs mt-1">Mastering skills and tactical awareness through structured development programs.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Character Building */}
+              <div className="group bg-gradient-to-br from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-xl p-3 sm:p-4 backdrop-blur-sm hover:border-emerald-400/50 transition-all duration-300 hover-lift">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 text-base">🎖️</div>
+                  <div className="flex-1">
+                    <h4 className="text-xs sm:text-sm font-bold text-emerald-400">Character</h4>
+                    <p className="text-white/50 text-[11px] sm:text-xs mt-1">Developing discipline, integrity, and professional values in every athlete.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience */}
+              <div className="group bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/30 rounded-xl p-3 sm:p-4 backdrop-blur-sm hover:border-purple-400/50 transition-all duration-300 hover-lift">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0 text-base">⭐</div>
+                  <div className="flex-1">
+                    <h4 className="text-xs sm:text-sm font-bold text-purple-400">Professional</h4>
+                    <p className="text-white/50 text-[11px] sm:text-xs mt-1">AFC Licensed with years of national and international football experience.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* View All Button */}
+              <button
+                onClick={onCoachesOpen}
+                className="w-full py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-500 text-white text-xs sm:text-sm font-semibold hover:from-sky-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-sky-500/20 focus:outline-none focus:ring-2 focus:ring-sky-500/50"
+              >
+                View All Coaches
+              </button>
+            </div>
           </div>
         </section>
 

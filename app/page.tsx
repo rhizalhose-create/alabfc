@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      {showAbout && <AboutPage onBack={() => setShowAbout(false)} />}
+      {showAbout && <AboutPage onBack={() => setShowAbout(false)} onCoachesOpen={() => setCoachesOpen(true)} />}
 
       {/* Single responsive layout: scroll on small screens, fixed on md+ */}
       <main className="relative min-h-screen w-full max-w-full md:h-screen md:overflow-hidden flex flex-col md:flex-none md:items-center md:justify-center overflow-x-hidden overflow-y-auto bg-[#050810]">
@@ -131,26 +131,16 @@ export default function Home() {
               ALAB
             </button>
           </div>
-
-          <div className="hidden md:block">
-            <h1 className="text-4xl lg:text-5xl font-black tracking-tight leading-[0.95]">
-              ALAB<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300"> FC</span>
-            </h1>
-            <p className="mt-2 text-white/55 text-sm lg:text-base max-w-md leading-relaxed">
-              Explore the field thirds and learn roles by clicking squad numbers.
-            </p>
-            <div className="w-16 h-px bg-gradient-to-r from-white/20 via-sky-400/50 to-transparent mt-4 rounded-full" />
-          </div>
         </div>
 
         {/* Football Field - responsive container */}
-        <div className="flex-1 flex items-center justify-center w-full max-w-full px-1.5 xs:px-2.5 xs:py-3 sm:px-3 sm:py-5 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none">
-          <div className="relative w-full max-w-[min(100%,22rem)] aspect-[4/5] xs:max-w-[26rem] sm:max-w-[30rem] sm:aspect-[5/4] md:max-w-[min(100%,900px)] md:w-[72%] lg:w-[68%] xl:w-[62%] md:h-[50%] lg:h-[52%] md:aspect-auto">
+        <div className="flex-1 flex items-center justify-center w-full max-w-full px-1.5 xs:px-2 xs:py-3 sm:px-2 sm:py-5 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none mt-6 md:mt-0">
+          <div className="relative w-[85%] xs:w-[10%] sm:w-[10%] md:w-[10%] lg:w-[10%] xl:w-[60%] aspect-[2]">
             <div className="relative w-full h-full glass rounded-lg xs:rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_80px_-20px_rgba(56,189,248,0.15)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="attacking" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
-              <div className="absolute left-1/2 top-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px] border-2 border-white/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
+              <div className="absolute left-1/2 top-1/2 w-12 h-12 sm:w-26 sm:h-16 md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px] border-2 border-white/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
               <div className="absolute left-1/2 top-1/2 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 bg-white/80 rounded-full -translate-x-1/2 -translate-y-1/2" />
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] sm:w-[4px] md:w-[6px] h-8 sm:h-10 md:h-[50px] bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] z-10" />
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[3px] sm:w-[4px] md:w-[6px] h-8 sm:h-10 md:h-[50px] bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] z-10" />
