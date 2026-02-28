@@ -31,13 +31,13 @@ export default function Home() {
 
       {/* Single responsive layout: scroll on small screens, fixed on md+ */}
       <main className="relative min-h-screen w-full max-w-full md:h-screen md:overflow-hidden flex flex-col md:flex-none md:items-center md:justify-center overflow-x-hidden overflow-y-auto bg-[#050810]">
-        {/* Background - fixed on desktop only */}
+        {/* Background - visible on all screens */}
         <div className="fixed inset-0 -z-20 md:z-0">
           <Image src="/alab1.jpg" alt="Alab Football Club Background" fill className="object-cover brightness-[0.55] saturate-[1.15] scale-105" priority />
         </div>
-        <div className="fixed inset-0 -z-10 md:z-0 bg-gradient-to-br from-[#050810]/92 via-[#0f172a]/85 to-[#0c1222]/92 md:from-[#050810]/90 md:via-[#0f172a]/80 md:to-[#0c1222]/90" />
+        <div className="fixed inset-0 -z-10 md:z-0 bg-gradient-to-br from-[#050810]/85 via-[#0f172a]/78 to-[#0c1222]/85 md:from-[#050810]/90 md:via-[#0f172a]/80 md:to-[#0c1222]/90" />
         <div className="fixed inset-0 -z-10 md:z-0 bg-gradient-to-t from-sky-950/20 via-transparent to-transparent" />
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-screen h-[60%] bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.06),transparent_70%)] pointer-events-none -z-10 hidden md:block" />
+        <div className="top-0 left-1/2 -translate-x-1/2 w-screen h-[60%] bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.06),transparent_70%)] pointer-events-none -z-10 fixed md:block" />
 
         {/* Mobile top bar */}
         <header className="md:hidden sticky top-0 z-50 flex items-center justify-between gap-1 xs:gap-1.5 px-1.5 xs:px-2 py-1.5 xs:py-2 glass border-b border-white/5">
@@ -135,7 +135,7 @@ export default function Home() {
 
         {/* Football Field - responsive container */}
         <div className="flex-1 flex items-center justify-center w-full max-w-full px-1.5 xs:px-2 xs:py-3 sm:px-2 sm:py-5 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none mt-6 md:mt-0">
-          <div className="relative w-[85%] xs:w-[10%] sm:w-[10%] md:w-[10%] lg:w-[10%] xl:w-[60%] aspect-[2]">
+          <div className="relative w-[90%] xs:w-[85%] sm:w-[80%] md:w-[70%] lg:w-[75%] xl:w-[40%] aspect-[1.5]">
             <div className="relative w-full h-full glass rounded-lg xs:rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_80px_-20px_rgba(56,189,248,0.15)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
