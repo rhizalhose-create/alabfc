@@ -250,8 +250,8 @@ export function CoachesProfileModal({ onClose }: CoachesProfileModalProps) {
                 <div className="border-t border-white/10 pt-3 sm:pt-4">
                   {coach.certifications.length > 0 ? (
                     <ul className="text-white/70 text-xs sm:text-sm space-y-1.5 sm:space-y-2">
-                      {coach.certifications.map((cert, idx) => (
-                        <li key={idx} className="flex gap-2 items-start">
+                      {coach.certifications.map((cert) => (
+                        <li key={cert} className="flex gap-2 items-start">
                           <span className="text-sky-400 mt-1 flex-shrink-0">•</span>
                           <span>{cert}</span>
                         </li>
