@@ -135,7 +135,7 @@ export default function Home() {
 
         {/* Football Field - responsive container */}
         <div className="flex-1 flex items-center justify-center w-full max-w-full px-1.5 xs:px-2 xs:py-3 sm:px-2 sm:py-5 md:px-0 md:py-0 md:absolute md:inset-0 md:flex-none mt-6 md:mt-0">
-          <div className="relative w-[85%] xs:w-[10%] sm:w-[10%] md:w-[10%] lg:w-[10%] xl:w-[50%] aspect-[2]">
+          <div className="relative w-[85%] xs:w-[10%] sm:w-[10%] md:w-[10%] lg:w-[10%] xl:w-[40%] aspect-[2]">
             <div className="relative w-full h-full glass rounded-lg xs:rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-12px_rgba(0,0,0,0.4)] md:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_80px_-20px_rgba(56,189,248,0.15)]">
               <FieldZone third="defensive" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
               <FieldZone third="mid" hoveredThird={hoveredThird} onHover={setHoveredThird} onClick={openModal} />
@@ -153,7 +153,6 @@ export default function Home() {
               <div className="absolute left-0 top-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-l-2 border-t-2 border-white/50 rounded-tl-xl sm:rounded-tl-2xl" />
               <div className="absolute right-0 top-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-r-2 border-t-2 border-white/50 rounded-tr-xl sm:rounded-tr-2xl" />
               <div className="absolute left-0 bottom-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-l-2 border-b-2 border-white/50 rounded-bl-xl sm:rounded-bl-2xl" />
-              <div className="absolute right-0 bottom-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-r-2 border-b-2 border-white/50 rounded-br-xl sm:rounded-br-2xl" />
             </div>
           </div>
         </div>
