@@ -10,23 +10,23 @@ interface FormationPlayer {
 
 const formation442: FormationPlayer[] = [
   // 1 Goalkeeper
-  { number: 1, position: "GK", x: 50, y: 12, role: "GK" },
+  { number: 1, position: "GK", x: 50, y: 95, role: "GK" },
 
   // 4 Defenders
-  { number: 2, position: "RB", x: 70, y: 30, role: "DEF" },
-  { number: 5, position: "CB", x: 45, y: 28, role: "DEF" },
-  { number: 4, position: "CB", x: 55, y: 28, role: "DEF" },
-  { number: 3, position: "LB", x: 30, y: 30, role: "DEF" },
+  { number: 2, position: "RB", x: 70, y: 80, role: "DEF" },
+  { number: 5, position: "CB", x: 45, y: 82, role: "DEF" },
+  { number: 4, position: "CB", x: 55, y: 82, role: "DEF" },
+  { number: 3, position: "LB", x: 30, y: 80, role: "DEF" },
 
   // 4 Midfielders
-  { number: 7, position: "LM", x: 28, y: 48, role: "MID" },
+  { number: 7, position: "RM", x: 72, y: 48, role: "MID" },
   { number: 6, position: "CM", x: 45, y: 50, role: "MID" },
   { number: 8, position: "CM", x: 55, y: 50, role: "MID" },
-  { number: 11, position: "RM", x: 72, y: 48, role: "MID" },
+  { number: 11, position: "LM", x: 28, y: 48, role: "MID" },
 
   // 2 Forwards
-  { number: 9, position: "ST", x: 45, y: 70, role: "FWD" },
-  { number: 10, position: "ST", x: 55, y: 70, role: "FWD" },
+  { number: 9, position: "ST", x: 45, y: 25, role: "FWD" },
+  { number: 10, position: "ST", x: 55, y: 25, role: "FWD" },
 ];
 
 interface Formation442Props {
